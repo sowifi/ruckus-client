@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         slackSend(color: "#f0ad4e", message: ":rocket: STARTED: Job ${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.RUN_DISPLAY_URL})")
-        sh 'docker-compose run --rm campaigns composer install'
+        sh 'docker-compose run --rm client composer install'
       }
     }
     stage('Test') {
@@ -15,6 +15,7 @@ pipeline {
         sh 'docker-compose run --rm client bin/phpunit --log-junit ./reports/phpunit.xml'
       }
     }
+  }
   post {
     success {
       slackSend(color: "#5cb85c", message: ":tada: SUCCESSFUL: Job ${env.JOB_NAME} [${env.BUILD_NUMBER}]")
