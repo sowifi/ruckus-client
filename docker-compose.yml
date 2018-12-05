@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  client:
+    build: .
+    volumes:
+      - .:/code
+      - ./docker/php/config/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+    working_dir: /code
