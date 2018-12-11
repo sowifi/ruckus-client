@@ -1,18 +1,13 @@
-<?php declare(strict_types=1);
+<?php
 
 use VCR\VCR;
 
 if (!file_exists(__DIR__ . "/../vendor/autoload.php")) {
-    die(
-        "\n[ERROR] You need to run composer before running the test suite.\n" .
-        "To do so run the following commands:\n" .
-        "    curl -s http://getcomposer.org/installer | php\n" .
-        "    php composer.phar install\n\n"
-    );
+    die("\n[ERROR] You need to run composer before running the test suite.\n");
 }
 require_once __DIR__ . '/../vendor/autoload.php';
 
-// Due to VCR not supporting PHP6
+// Due to VCR not supporting PHP7
 $phpunitAliases = [
     '\PHPUnit\Framework\Test' => '\PHPUnit_Framework_Test',
     '\PHPUnit\Framework\TestListener' => '\PHPUnit_Framework_TestListener',
@@ -28,7 +23,7 @@ foreach ($phpunitAliases as $namespaced => $alias) {
 }
 
 VCR::configure()
-    ->setCassettePath('tests/fixtures/vcr')
+    ->setCassettePath(__DIR__ . '/fixtures/vcr')
     ->enableLibraryHooks(['curl'])
     ->setStorage('json')
     ->enableRequestMatchers(['method', 'url', 'host', 'query_string', 'body']);
