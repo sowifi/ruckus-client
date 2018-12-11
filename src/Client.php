@@ -7,7 +7,7 @@ use GuzzleHttp\RequestOptions;
 
 class Client
 {
-    CONST BASE_URI = 'https://%s:8443/wsg/api/public/v7_0';
+    const BASE_URI = 'https://%s:8443/wsg/api/public/%s';
 
     /**
      * @var HttpClient
@@ -20,17 +20,17 @@ class Client
     private $uri;
 
     /**
-     * @param HttpClient $http
      * @param string $host
+     * @param string $version
      */
-    public function __construct(HttpClient $http, $host)
+    public function __construct($host, $version = 'v7_0')
     {
-        $this->http = $http;
-        $this->uri = sprintf(self::BASE_URI, $host);
+        $this->http = new HttpClient();
+        $this->uri = sprintf(self::BASE_URI, $host, $version);
     }
 
     /**
-     * Use this API command to log on to the controller and acquire a valid service ticket.
+     * Log on to the controller and acquire a valid service ticket.
      *
      * @param string $username
      * @param string $password
@@ -39,8 +39,33 @@ class Client
      */
     public function serviceTicketLogon($username, $password)
     {
-        $res = $this->http->post($this->uri . '/serviceTicket', [
-            RequestOptions::JSON => ['username' => $username, 'password' => $password],
+        return $this->post($this->uri . '/serviceTicket', ['username' => $username, 'password' => $password]);
+    }
+
+    /**
+     * Create a new Ruckus Wireless AP zone.
+     *
+     * @param array $params
+     *
+     * @return array
+     */
+    public function apZoneCreate(array $params)
+    {
+        return $this->post($this->uri . '/rkszones', $params);
+    }
+
+    /**
+     * Generate POST request
+     *
+     * @param array $params
+     * @param string $uri
+     *
+     * @return array
+     */
+    protected function post($uri, array $params)
+    {
+        $res = $this->http->post($uri, [
+            RequestOptions::JSON => $params,
             RequestOptions::VERIFY => false,
         ]);
 

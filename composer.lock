@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8e9b74bb18f90a87b431d9bfe032450f",
+    "content-hash": "719175778cf9e7c43109b4172d3ba4d3",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -1309,6 +1309,46 @@
             ],
             "description": "Record your test suite's HTTP interactions and replay them during future test runs for fast, deterministic, accurate tests.",
             "time": "2018-05-30T15:10:47+00:00"
+        },
+        {
+            "name": "php-vcr/phpunit-testlistener-vcr",
+            "version": "3.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-vcr/phpunit-testlistener-vcr.git",
+                "reference": "299aaf88533cee3ae64e99bdc6ad5b97fb495f21"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-vcr/phpunit-testlistener-vcr/zipball/299aaf88533cee3ae64e99bdc6ad5b97fb495f21",
+                "reference": "299aaf88533cee3ae64e99bdc6ad5b97fb495f21",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1",
+                "php-vcr/php-vcr": "^1.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "VCR\\PHPUnit\\TestListener\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adrian Philipp",
+                    "email": "mail@adrian-philipp.com"
+                }
+            ],
+            "description": "Integrates PHPUnit with PHP-VCR.",
+            "time": "2018-07-06T08:53:21+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -3214,7 +3254,8 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.2"
+        "php": ">=7.2",
+        "ext-json": "*"
     },
     "platform-dev": []
 }

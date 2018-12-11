@@ -1,0 +1,37 @@
+[{
+    "request": {
+        "method": "POST",
+        "url": "https:\/\/ruckus.soconnect.com:8443\/wsg\/api\/public\/v7_0\/rkszones",
+        "headers": {
+            "Host": "ruckus.soconnect.com:8443",
+            "Expect": null,
+            "Accept-Encoding": null,
+            "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.10",
+            "Content-Type": "application\/json",
+            "Accept": null
+        },
+        "body": "[]"
+    },
+    "response": {
+        "status": {
+            "http_version": "1.1",
+            "code": "401",
+            "message": ""
+        },
+        "headers": {
+            "Server": "nginx\/1.12.0",
+            "Date": "Tue, 11 Dec 2018 15:47:33 GMT",
+            "Content-Type": "application\/json;charset=UTF-8",
+            "Transfer-Encoding": "chunked",
+            "Connection": "keep-alive",
+            "Set-Cookie": "JSESSIONID=5E47B08292E5C4E39AB9759C079494E6; Path=\/wsg; HttpOnly",
+            "Cache-Control": "no-store",
+            "X-XSS-Protection": "1; mode=block",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Content-Type-Options": "nosniff",
+            "Content-Language": "en-US",
+            "Vary": "Accept-Encoding"
+        },
+        "body": "{\"message\":\"Current session has timed out.\",\"errorCode\":201,\"errorType\":\"No active session\"}"
+    }
+}]
