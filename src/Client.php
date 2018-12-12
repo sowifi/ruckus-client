@@ -44,14 +44,6 @@ class Client
         $this->uri = sprintf(self::BASE_URI, $host, $version);
     }
 
-    public function __destruct()
-    {
-        // Logoff from the controller's API
-        if ($this->hasServiceTicket() && getenv('APP_ENV') !== 'testing') {
-            $this->serviceTicketLogoff();
-        }
-    }
-
     /**
      * Log off of the controller.
      *
@@ -65,18 +57,6 @@ class Client
     }
 
     /**
-     * JSON decode response
-     *
-     * @param ResponseInterface $res
-     *
-     * @return array
-     */
-    private function jsonDecode(ResponseInterface $res)
-    {
-        return json_decode($res->getBody(), true);
-    }
-
-    /**
      * Log on to the controller and acquire a valid service ticket.
      *
      * @return array
@@ -84,28 +64,12 @@ class Client
     public function serviceTicketLogon()
     {
         $res = $this->post($this->uri . '/serviceTicket', [
-            'username' => self::USERNAME, 'password' => self::USERPASS
+            'username' => self::USERNAME,
+            'password' => self::USERPASS
         ]);
         $this->setServiceTicket($res['serviceTicket']);
 
         return $res;
-    }
-
-    /**
-     * Generate POST request
-     *
-     * @param array $params
-     * @param string $uri
-     *
-     * @return array
-     */
-    protected function post($uri, array $params)
-    {
-        $res = $this->http->post($uri, [
-            RequestOptions::JSON => $params,
-        ]);
-
-        return $this->jsonDecode($res);
     }
 
     /**
@@ -120,6 +84,32 @@ class Client
         $params['login'] = ['apLoginName' => Client::USERNAME, 'apLoginPassword' => Client::USERPASS];
 
         return $this->post($this->uri . '/rkszones', $params);
+    }
+
+    /**
+     * Create a new standard, 802.1X and non-tunneled WLAN.
+     *
+     * @param string $zoneId
+     * @param array $params
+     *
+     * @return array
+     */
+    public function wlanCreateStandard8021x($zoneId, array $params)
+    {
+        return $this->post($this->uri . '/rkszones/' . $zoneId . '/wlans/standard8021X', $params);
+    }
+
+    /**
+     * Create new hotspot (WISPr) WLAN.
+     *
+     * @param string $zoneId
+     * @param array $params
+     *
+     * @return array
+     */
+    public function wlanCreateWispr($zoneId, array $params)
+    {
+        return $this->post($this->uri . '/rkszones/' . $zoneId . '/wlans/wispr', $params);
     }
 
     /**
@@ -146,8 +136,50 @@ class Client
         return !empty($this->serviceTicket);
     }
 
+    /**
+     * @param RequestInterface $req
+     *
+     * @return bool
+     */
     public function isServiceLogonRequest(RequestInterface $req)
     {
-        return (string) $req->getUri() === $this->uri . '/serviceTicket' && $req->getMethod() === 'POST';
+        return (string)$req->getUri() === $this->uri . '/serviceTicket' && $req->getMethod() === 'POST';
+    }
+
+    public function __destruct()
+    {
+        // Logoff from the controller's API
+        if ($this->hasServiceTicket() && getenv('APP_ENV') !== 'testing') {
+            $this->serviceTicketLogoff();
+        }
+    }
+
+    /**
+     * Generate POST request
+     *
+     * @param array $params
+     * @param string $uri
+     *
+     * @return array
+     */
+    protected function post($uri, array $params)
+    {
+        $res = $this->http->post($uri, [
+            RequestOptions::JSON => $params,
+        ]);
+
+        return $this->jsonDecode($res);
+    }
+
+    /**
+     * JSON decode response
+     *
+     * @param ResponseInterface $res
+     *
+     * @return array
+     */
+    private function jsonDecode(ResponseInterface $res)
+    {
+        return json_decode($res->getBody(), true);
     }
 }

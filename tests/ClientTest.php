@@ -44,6 +44,43 @@ class ClientTest extends TestCase
             'description' => 'Test Description',
         ]);
 
-        $this->assertEquals('0adef9f8-b925-42b2-be9b-ba7ff1404274', $res['id']);
+        $this->assertEquals('476bcc2d-1d4b-4fa7-a3ad-45ac35f64af3', $res['id']);
+    }
+
+    /**
+     * @vcr wlan-create-standard8021x
+     */
+    public function testWlanCreateStandard8021x()
+    {
+        $res = $this->client->wlanCreateStandard8021x('4757aaa9-aa3b-4acf-9731-8970049d9109', [
+            'name' => 'Test Name Unit',
+            'description' => 'Test Description',
+            'ssid' => 'test-wlan-1234',
+            'authServiceOrProfile' => [
+                "name" => "soconnect-venue-1234-radius-auth"
+            ]
+        ]);
+
+        $this->assertEquals('26', $res['id']);
+    }
+
+    /**
+     * @vcr wlan-create-wispr
+     */
+    public function testWlanCreateWispr()
+    {
+        $res = $this->client->wlanCreateWispr('4757aaa9-aa3b-4acf-9731-8970049d9109', [
+            'name' => 'Test Name Wispr Unit',
+            'description' => 'Test Description',
+            'ssid' => 'test-wlan-1234',
+            'authServiceOrProfile' => [
+                "name" => "soconnect-venue-1234-radius-auth"
+            ],
+            'portalServiceProfile' => [
+                'name' => 'soconnect-captive-portal',
+            ]
+        ]);
+
+        $this->assertEquals('27', $res['id']);
     }
 }
