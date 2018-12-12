@@ -1,7 +1,7 @@
 [{
     "request": {
         "method": "POST",
-        "url": "https:\/\/ruckus.soconnect.com:8443\/wsg\/api\/public\/v7_0\/rkszones",
+        "url": "https:\/\/ruckus.soconnect.com:8443\/wsg\/api\/public\/v7_0\/serviceTicket",
         "headers": {
             "Host": "ruckus.soconnect.com:8443",
             "Expect": null,
@@ -10,7 +10,81 @@
             "Content-Type": "application\/json",
             "Accept": null
         },
-        "body": "[]"
+        "body": "{\"username\":\"admin\",\"password\":\"Fietstas1314!\"}"
+    },
+    "response": {
+        "status": {
+            "http_version": "1.1",
+            "code": "200",
+            "message": ""
+        },
+        "headers": {
+            "Server": "nginx\/1.12.0",
+            "Date": "Wed, 12 Dec 2018 13:24:05 GMT",
+            "Content-Type": "text\/plain;charset=UTF-8",
+            "Transfer-Encoding": "chunked",
+            "Connection": "keep-alive",
+            "Set-Cookie": "JSESSIONID=C32A3381E96DC91A21435539E878713D; Path=\/wsg; HttpOnly",
+            "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+            "Pragma": "no-cache",
+            "Expires": "0",
+            "X-XSS-Protection": "1; mode=block",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Content-Type-Options": "nosniff",
+            "Vary": "Accept-Encoding"
+        },
+        "body": "{\"controllerVersion\":\"5.0.0.0.675\",\"serviceTicket\":\"ST-56-xtFPbcLdW7jf3xGda760-sct-rcs-ctr01\"}"
+    }
+},{
+    "request": {
+        "method": "POST",
+        "url": "https:\/\/ruckus.soconnect.com:8443\/wsg\/api\/public\/v7_0\/rkszones?serviceTicket=ST-56-xtFPbcLdW7jf3xGda760-sct-rcs-ctr01",
+        "headers": {
+            "Host": "ruckus.soconnect.com:8443",
+            "Expect": null,
+            "Accept-Encoding": null,
+            "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.10",
+            "Content-Type": "application\/json",
+            "Accept": null
+        },
+        "body": "{\"domainId\":\"ab1671ee-4d86-4b01-8b65-0b498f719abc\",\"name\":\"Test Name Unit\",\"description\":\"Test Description\",\"login\":{\"apLoginName\":\"admin\",\"apLoginPassword\":\"Fietstas1314!\"}}"
+    },
+    "response": {
+        "status": {
+            "http_version": "1.1",
+            "code": "201",
+            "message": ""
+        },
+        "headers": {
+            "Server": "nginx\/1.12.0",
+            "Date": "Wed, 12 Dec 2018 13:24:06 GMT",
+            "Content-Type": "text\/plain;charset=UTF-8",
+            "Transfer-Encoding": "chunked",
+            "Connection": "keep-alive",
+            "Set-Cookie": "JSESSIONID=0834BBB9FCC417009A5D465BDAA65C98; Path=\/wsg; HttpOnly",
+            "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+            "Pragma": "no-cache",
+            "Expires": "0",
+            "X-XSS-Protection": "1; mode=block",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Content-Type-Options": "nosniff",
+            "Vary": "Accept-Encoding"
+        },
+        "body": "{\"id\":\"0adef9f8-b925-42b2-be9b-ba7ff1404274\"}"
+    }
+},{
+    "request": {
+        "method": "POST",
+        "url": "https:\/\/ruckus.soconnect.com:8443\/wsg\/api\/public\/v7_0\/serviceTicket",
+        "headers": {
+            "Host": "ruckus.soconnect.com:8443",
+            "Expect": null,
+            "Accept-Encoding": null,
+            "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.10",
+            "Content-Type": "application\/json",
+            "Accept": null
+        },
+        "body": "{\"username\":\"admin\",\"password\":\"admin\"}"
     },
     "response": {
         "status": {
@@ -20,11 +94,11 @@
         },
         "headers": {
             "Server": "nginx\/1.12.0",
-            "Date": "Tue, 11 Dec 2018 15:47:33 GMT",
+            "Date": "Wed, 12 Dec 2018 13:27:55 GMT",
             "Content-Type": "application\/json;charset=UTF-8",
             "Transfer-Encoding": "chunked",
             "Connection": "keep-alive",
-            "Set-Cookie": "JSESSIONID=5E47B08292E5C4E39AB9759C079494E6; Path=\/wsg; HttpOnly",
+            "Set-Cookie": "JSESSIONID=33BA3B4140FCF0556FCF282915173642; Path=\/wsg; HttpOnly",
             "Cache-Control": "no-store",
             "X-XSS-Protection": "1; mode=block",
             "X-Frame-Options": "SAMEORIGIN",
@@ -32,6 +106,6 @@
             "Content-Language": "en-US",
             "Vary": "Accept-Encoding"
         },
-        "body": "{\"message\":\"Current session has timed out.\",\"errorCode\":201,\"errorType\":\"No active session\"}"
+        "body": "{\"message\":\"User name or password is invalid\",\"errorCode\":202,\"errorType\":\"Login denied\"}"
     }
 }]

@@ -32,7 +32,7 @@ pipeline {
     }
   }
   environment {
-    HOME                  = '.'
-    VERSION               = "${env.JOB_BASE_NAME}-${env.BUILD_ID}"
+    HOME    = '.'
+    VERSION = "${env.JOB_BASE_NAME}-${env.BUILD_ID}"
   }
 }

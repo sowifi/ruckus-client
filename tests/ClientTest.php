@@ -27,7 +27,7 @@ class ClientTest extends TestCase
      */
     public function testServiceLogon()
     {
-        $res = $this->client->serviceTicketLogon('admin', 'Fietstas1314!');
+        $res = $this->client->serviceTicketLogon();
 
         $this->assertEquals('5.0.0.0.675', $res['controllerVersion']);
         $this->assertEquals('ST-28-Gc1YMh9iZK9Hb9s4wbDU-sct-rcs-ctr01', $res['serviceTicket']);
@@ -38,11 +38,12 @@ class ClientTest extends TestCase
      */
     public function testApZoneCreate()
     {
-        $this->assertTrue(true);
-//        $res = $this->client->serviceTicketLogon('admin', 'Fietstas1314!');
-//
-//        $res = $this->client->apZoneCreate([]);
-//
-//        var_dump($res);
+        $res = $this->client->apZoneCreate([
+            'domainId' => 'ab1671ee-4d86-4b01-8b65-0b498f719abc',
+            'name' => 'Test Name Unit',
+            'description' => 'Test Description',
+        ]);
+
+        $this->assertEquals('0adef9f8-b925-42b2-be9b-ba7ff1404274', $res['id']);
     }
 }
