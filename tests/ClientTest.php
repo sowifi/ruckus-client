@@ -3,6 +3,9 @@
 namespace Test;
 
 use PHPUnit\Framework\TestCase;
+use SoConnect\RuckusClient\Api\ApZone;
+use SoConnect\RuckusClient\Api\ServiceTicket;
+use SoConnect\RuckusClient\Api\Wlan;
 use SoConnect\RuckusClient\Client;
 
 class ClientTest extends TestCase
@@ -45,5 +48,26 @@ class ClientTest extends TestCase
     public function testCallThrowsClientException()
     {
         $this->client->notExisting();
+    }
+
+    /**
+     * @test
+     * @dataProvider apiClassesMappingProvider
+     */
+    public function testShouldGetApiInstance($apiName, $class)
+    {
+        $this->assertInstanceOf($class, $this->client->$apiName());
+    }
+
+    /**
+     * @return array
+     */
+    public function apiClassesMappingProvider()
+    {
+        return [
+            ['wlan', Wlan::class],
+            ['serviceTicket', ServiceTicket::class],
+            ['apZone', ApZone::class],
+        ];
     }
 }
