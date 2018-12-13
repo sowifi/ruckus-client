@@ -12,7 +12,7 @@ class ServiceTicket extends AbstractApi
     /**
      * Log off of the controller.
      */
-    public function serviceTicketLogoff()
+    public function logoff()
     {
         $this->delete('/serviceTicket');
     }
@@ -22,7 +22,7 @@ class ServiceTicket extends AbstractApi
      *
      * @return array
      */
-    public function serviceTicketLogon()
+    public function logon()
     {
         $res = $this->post('/serviceTicket', [
             'username' => self::USERNAME,

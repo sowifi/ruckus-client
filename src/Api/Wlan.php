@@ -12,7 +12,7 @@ class Wlan extends AbstractApi
      *
      * @return array
      */
-    public function wlanCreateStandard8021x($zoneId, array $params)
+    public function create8021x($zoneId, array $params)
     {
         return $this->post('/rkszones/' . $zoneId . '/wlans/standard8021X', $params);
     }
@@ -25,7 +25,7 @@ class Wlan extends AbstractApi
      *
      * @return array
      */
-    public function wlanCreateWispr($zoneId, array $params)
+    public function createWispr($zoneId, array $params)
     {
         return $this->post('/rkszones/' . $zoneId . '/wlans/wispr', $params);
     }

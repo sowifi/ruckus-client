@@ -11,7 +11,7 @@ class ApZone extends AbstractApi
      *
      * @return array
      */
-    public function apZoneCreate(array $params)
+    public function createZone(array $params)
     {
         return $this->post('/rkszones', $params);
     }

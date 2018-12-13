@@ -76,7 +76,7 @@ class Client
     {
         // Logoff from the controller's API
         if ($this->hasServiceTicket() && getenv('APP_ENV') !== 'testing') {
-            $this->serviceTicket()->serviceTicketLogoff();
+            $this->serviceTicket()->logoff();
         }
     }
 
@@ -129,7 +129,7 @@ class Client
             case 'wlan':
                 return new Api\Wlan($this);
             default:
-                throw new ClientException(sprintf('Undefined api instance called: "%s"', $name));
+                throw new \InvalidArgumentException(sprintf('Undefined api instance called: "%s"', $name));
         }
     }
 }

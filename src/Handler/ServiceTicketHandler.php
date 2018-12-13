@@ -46,7 +46,7 @@ class ServiceTicketHandler
             // otherwise create new one
             $ticket = $this->client->hasServiceTicket()
                 ? $this->client->getServiceTicket()
-                : $serviceApi->serviceTicketLogon()['serviceTicket'];
+                : $serviceApi->logon()['serviceTicket'];
             $uri = $request->getUri()->withQuery('serviceTicket=' . $ticket);
             $request = $request->withUri($uri);
 
