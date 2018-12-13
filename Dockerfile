@@ -5,9 +5,10 @@ RUN if [ ! -f /usr/bin/composer ]; then curl -sS https://getcomposer.org/install
 
 # Install server dependencies.
 RUN apt-get update
-RUN apt-get install -y git curl nano net-tools
+RUN apt-get install -y git curl nano net-tools zip unzip zlib1g-dev
 RUN pecl install xdebug \
     && docker-php-ext-enable xdebug
+RUN docker-php-ext-install zip
 
 # Easy cli debugging with XDebug
 RUN echo "export PHP_IDE_CONFIG=\"serverName=ruckus-client\"" >> ~/.bashrc
