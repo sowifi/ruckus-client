@@ -3,6 +3,7 @@
 namespace Test\Api;
 
 use SoConnect\RuckusClient\Api\ServiceTicket;
+use Test\ApiTestCase;
 
 class ServiceTicketTest extends ApiTestCase
 {

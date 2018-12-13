@@ -3,6 +3,7 @@
 namespace Test\Api;
 
 use SoConnect\RuckusClient\Api\ApZone;
+use Test\ApiTestCase;
 
 class ApZoneTest extends ApiTestCase
 {

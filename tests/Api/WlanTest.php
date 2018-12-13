@@ -3,6 +3,7 @@
 namespace Test\Api;
 
 use SoConnect\RuckusClient\Api\Wlan;
+use Test\ApiTestCase;
 
 class WlanTest extends ApiTestCase
 {

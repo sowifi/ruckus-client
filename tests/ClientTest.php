@@ -2,29 +2,12 @@
 
 namespace Test;
 
-use PHPUnit\Framework\TestCase;
 use SoConnect\RuckusClient\Api\ApZone;
 use SoConnect\RuckusClient\Api\ServiceTicket;
 use SoConnect\RuckusClient\Api\Wlan;
-use SoConnect\RuckusClient\Client;
 
-class ClientTest extends TestCase
+class ClientTest extends ApiTestCase
 {
-    /**
-     * @var Client
-     */
-    protected $client;
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function setUp()
-    {
-        parent::setUp();
-
-        $this->client = new Client('ruckus.soconnect.com');
-    }
-
     /**
      * @vcr service-logon
      */

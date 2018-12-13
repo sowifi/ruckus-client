@@ -1,6 +1,6 @@
 <?php
 
-namespace Test\Api;
+namespace Test;
 
 use PHPUnit\Framework\TestCase;
 use SoConnect\RuckusClient\Client;
