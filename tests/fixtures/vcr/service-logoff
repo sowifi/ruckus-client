@@ -20,11 +20,11 @@
         },
         "headers": {
             "Server": "nginx\/1.12.0",
-            "Date": "Thu, 13 Dec 2018 14:51:09 GMT",
+            "Date": "Thu, 13 Dec 2018 14:40:31 GMT",
             "Content-Type": "text\/plain;charset=UTF-8",
             "Transfer-Encoding": "chunked",
             "Connection": "keep-alive",
-            "Set-Cookie": "JSESSIONID=1CBEFC234982D0289A4B0339A4EEE0C5; Path=\/wsg; HttpOnly",
+            "Set-Cookie": "JSESSIONID=C135A04FB88B5DB8878543203412094E; Path=\/wsg; HttpOnly",
             "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
             "Pragma": "no-cache",
             "Expires": "0",
@@ -33,12 +33,12 @@
             "X-Content-Type-Options": "nosniff",
             "Vary": "Accept-Encoding"
         },
-        "body": "{\"controllerVersion\":\"5.0.0.0.675\",\"serviceTicket\":\"ST-65-mUmqX7VwHUHPN5oXxakH-sct-rcs-ctr01\"}"
+        "body": "{\"controllerVersion\":\"5.0.0.0.675\",\"serviceTicket\":\"ST-63-eP9bNB24JZo0MVePvRJv-sct-rcs-ctr01\"}"
     }
 },{
     "request": {
-        "method": "POST",
-        "url": "https:\/\/ruckus.soconnect.com:8443\/wsg\/api\/public\/v7_0\/rkszones?serviceTicket=ST-65-mUmqX7VwHUHPN5oXxakH-sct-rcs-ctr01",
+        "method": "DELETE",
+        "url": "https:\/\/ruckus.soconnect.com:8443\/wsg\/api\/public\/v7_0\/serviceTicket?serviceTicket=ST-63-eP9bNB24JZo0MVePvRJv-sct-rcs-ctr01",
         "headers": {
             "Host": "ruckus.soconnect.com:8443",
             "Expect": null,
@@ -47,29 +47,26 @@
             "Content-Type": "application\/json",
             "Accept": null
         },
-        "body": "{\"domainId\":\"ab1671ee-4d86-4b01-8b65-0b498f719abc\",\"name\":\"Test Name Unit\",\"description\":\"Test Description\",\"login\":{\"apLoginName\":\"some-name\",\"apLoginPassword\":\"Pass123!\"}}"
+        "body": "[]"
     },
     "response": {
         "status": {
             "http_version": "1.1",
-            "code": "201",
+            "code": "200",
             "message": ""
         },
         "headers": {
             "Server": "nginx\/1.12.0",
-            "Date": "Thu, 13 Dec 2018 14:51:10 GMT",
-            "Content-Type": "text\/plain;charset=UTF-8",
-            "Transfer-Encoding": "chunked",
+            "Date": "Thu, 13 Dec 2018 14:42:10 GMT",
+            "Content-Length": "0",
             "Connection": "keep-alive",
-            "Set-Cookie": "JSESSIONID=2221B98A2A8414E24B5F83DFCEF875E6; Path=\/wsg; HttpOnly",
+            "Set-Cookie": "JSESSIONID=777DCBA590F401D5C9CB3D066BA3A1D3; Path=\/wsg; HttpOnly",
             "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
             "Pragma": "no-cache",
             "Expires": "0",
             "X-XSS-Protection": "1; mode=block",
             "X-Frame-Options": "SAMEORIGIN",
-            "X-Content-Type-Options": "nosniff",
-            "Vary": "Accept-Encoding"
-        },
-        "body": "{\"id\":\"842ad983-1d49-46dd-be54-f70c14040679\"}"
+            "X-Content-Type-Options": "nosniff"
+        }
     }
 }]

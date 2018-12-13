@@ -5,16 +5,20 @@ namespace SoConnect\RuckusClient;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Handler\CurlHandler;
 use GuzzleHttp\HandlerStack;
-use GuzzleHttp\RequestOptions;
-use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\ResponseInterface;
+use SoConnect\RuckusClient\Api\AbstractApi;
+use SoConnect\RuckusClient\Exception\ClientException;
 use SoConnect\RuckusClient\Handler\ServiceTicketHandler;
 
+/**
+ * Ruckus WLAN controller API client
+ *
+ * @method Api\Wlan wlan()
+ * @method Api\ServiceTicket serviceTicket()
+ * @method Api\ApZone apZone()
+ */
 class Client
 {
     const BASE_URI = 'https://%s:8443/wsg/api/public/%s';
-    const USERNAME = 'admin';
-    const USERPASS = 'Fietstas1314!';
 
     /**
      * @var HttpClient
@@ -45,74 +49,6 @@ class Client
     }
 
     /**
-     * Log off of the controller.
-     *
-     * @return array
-     */
-    public function serviceTicketLogoff()
-    {
-        $res = $this->http->delete($this->uri . '/serviceTicket');
-
-        return $this->jsonDecode($res);
-    }
-
-    /**
-     * Log on to the controller and acquire a valid service ticket.
-     *
-     * @return array
-     */
-    public function serviceTicketLogon()
-    {
-        $res = $this->post($this->uri . '/serviceTicket', [
-            'username' => self::USERNAME,
-            'password' => self::USERPASS
-        ]);
-        $this->setServiceTicket($res['serviceTicket']);
-
-        return $res;
-    }
-
-    /**
-     * Create a new Ruckus Wireless AP zone.
-     *
-     * @param array $params
-     *
-     * @return array
-     */
-    public function apZoneCreate(array $params)
-    {
-        $params['login'] = ['apLoginName' => Client::USERNAME, 'apLoginPassword' => Client::USERPASS];
-
-        return $this->post($this->uri . '/rkszones', $params);
-    }
-
-    /**
-     * Create a new standard, 802.1X and non-tunneled WLAN.
-     *
-     * @param string $zoneId
-     * @param array $params
-     *
-     * @return array
-     */
-    public function wlanCreateStandard8021x($zoneId, array $params)
-    {
-        return $this->post($this->uri . '/rkszones/' . $zoneId . '/wlans/standard8021X', $params);
-    }
-
-    /**
-     * Create new hotspot (WISPr) WLAN.
-     *
-     * @param string $zoneId
-     * @param array $params
-     *
-     * @return array
-     */
-    public function wlanCreateWispr($zoneId, array $params)
-    {
-        return $this->post($this->uri . '/rkszones/' . $zoneId . '/wlans/wispr', $params);
-    }
-
-    /**
      * @return string
      */
     public function getServiceTicket()
@@ -136,50 +72,64 @@ class Client
         return !empty($this->serviceTicket);
     }
 
-    /**
-     * @param RequestInterface $req
-     *
-     * @return bool
-     */
-    public function isServiceLogonRequest(RequestInterface $req)
-    {
-        return (string)$req->getUri() === $this->uri . '/serviceTicket' && $req->getMethod() === 'POST';
-    }
-
     public function __destruct()
     {
         // Logoff from the controller's API
         if ($this->hasServiceTicket() && getenv('APP_ENV') !== 'testing') {
-            $this->serviceTicketLogoff();
+            $this->serviceTicket()->serviceTicketLogoff();
         }
     }
 
     /**
-     * Generate POST request
+     * @param string $name
+     * @return mixed
      *
-     * @param array $params
-     * @param string $uri
-     *
-     * @return array
+     * @throws ClientException
      */
-    protected function post($uri, array $params)
+    public function __call($name, $arg)
     {
-        $res = $this->http->post($uri, [
-            RequestOptions::JSON => $params,
-        ]);
-
-        return $this->jsonDecode($res);
+        try {
+            return $this->api($name);
+        } catch (\InvalidArgumentException $e) {
+            throw new ClientException(sprintf('Undefined method called: "%s"', $name));
+        }
     }
 
     /**
-     * JSON decode response
-     *
-     * @param ResponseInterface $res
-     *
-     * @return array
+     * @return HttpClient
      */
-    private function jsonDecode(ResponseInterface $res)
+    public function getHttp()
     {
-        return json_decode($res->getBody(), true);
+        return $this->http;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUri(): string
+    {
+        return $this->uri;
+    }
+
+    /**
+     * API factory
+     *
+     * @param string $name
+     * @return AbstractApi
+     *
+     * @throws ClientException
+     */
+    private function api($name)
+    {
+        switch ($name) {
+            case 'apZone':
+                return new Api\ApZone($this);
+            case 'serviceTicket':
+                return new Api\ServiceTicket($this);
+            case 'wlan':
+                return new Api\Wlan($this);
+            default:
+                throw new ClientException(sprintf('Undefined api instance called: "%s"', $name));
+        }
     }
 }

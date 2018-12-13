@@ -16,13 +16,19 @@ class ServiceTicketHandler
     /**
      * @var Client
      */
-    public $client;
+    private $client;
 
     public function __construct(Client $client)
     {
         $this->client = $client;
     }
 
+    /**
+     * Call the handler in the stack
+     *
+     * @param callable $handler
+     * @return \Closure
+     */
     public function __invoke(callable $handler)
     {
         return function (RequestInterface $request, array $options) use ($handler) {
@@ -31,7 +37,8 @@ class ServiceTicketHandler
 
             // Ignore this middleware for service ticket request itself
             // to prevent infinite loop
-            if ($this->client->isServiceLogonRequest($request)) {
+            $serviceApi = $this->client->serviceTicket();
+            if ($serviceApi->isServiceLogonRequest($request)) {
                 return $handler($request, $options);
             }
 
@@ -39,7 +46,7 @@ class ServiceTicketHandler
             // otherwise create new one
             $ticket = $this->client->hasServiceTicket()
                 ? $this->client->getServiceTicket()
-                : $this->client->serviceTicketLogon()['serviceTicket'];
+                : $serviceApi->serviceTicketLogon()['serviceTicket'];
             $uri = $request->getUri()->withQuery('serviceTicket=' . $ticket);
             $request = $request->withUri($uri);
 
