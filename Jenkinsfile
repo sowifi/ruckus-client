@@ -19,11 +19,8 @@ pipeline {
       steps {
         script {
           def slurper = new XmlSlurper();
-          slurper.setFeature("http://apache.org/xml/features/disallow-doctype-decl", false)
-          slurper.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
           def text = slurper.parseText(new File(pwd() + "/reports/coverage/index.xml").getText());
-          def cov = text.phpunit.project.directory.totals.lines["percent"];
-          println cov;
+          env.CODE_COV = text.phpunit.project.directory.totals.lines["@percent"].text();
         }
       }
     }
@@ -31,6 +28,7 @@ pipeline {
   post {
     success {
       slackSend(color: "#5cb85c", message: ":tada: SUCCESSFUL: Job ${env.JOB_NAME} [${env.BUILD_NUMBER}]")
+      slackSend(color: "#5cb85c", message: ":chart_with_upwards_trend: CODECOV: ${env.CODE_COV}%")
     }
     failure {
       slackSend(color: "#d9534f", message: ":poop: FAILED: Job ${env.JOB_NAME} [${env.BUILD_NUMBER}]")
