@@ -12,7 +12,19 @@ pipeline {
         sh 'docker-compose run --rm client bin/parallel-lint --exclude vendor .'
         sh 'docker-compose run --rm client bin/phpcs src/ tests/ --standard=PSR2,PSR12 --report=summary -p'
         sh 'docker-compose run --rm client bin/phpstan analyse -l max src/ tests/'
-        sh 'docker-compose run --rm client bin/phpunit --log-junit ./reports/phpunit.xml'
+        sh 'docker-compose run --rm client bin/phpunit --log-junit ./reports/phpunit.xml  --coverage-xml reports/coverage'
+      }
+    }
+    stage('Parse') {
+      steps {
+        script {
+          def slurper = new XmlSlurper();
+          slurper.setFeature("http://apache.org/xml/features/disallow-doctype-decl", false)
+          slurper.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+          def text = slurper.parseText(new File(pwd() + "/reports/coverage/index.xml").getText());
+          def cov = text.phpunit.project.directory.totals.lines["percent"];
+          println cov;
+        }
       }
     }
   }
