@@ -35,11 +35,11 @@ class ServiceTicketTest extends ApiTestCase
 
     /**
      * @vcr service-logoff
-     * @doesNotPerformAssertions
      */
     public function testServiceLogoff()
     {
-        // If logoff does not throw exception, all is good ¯\_(ツ)_/¯
         $this->serviceApi->logoff();
+
+        $this->assertFalse($this->client->hasServiceTicket());
     }
 }

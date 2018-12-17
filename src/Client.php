@@ -18,7 +18,7 @@ use SoConnect\RuckusClient\Handler\ServiceTicketHandler;
  */
 class Client
 {
-    const BASE_URI = 'https://%s:8443/wsg/api/public/%s';
+    const BASE_URI = '%s/wsg/api/public/%s';
 
     /**
      * @var HttpClient
@@ -33,7 +33,7 @@ class Client
     /**
      * @var string
      */
-    private $serviceTicket;
+    private $serviceTicket = '';
 
     /**
      * @param string $host
@@ -117,7 +117,7 @@ class Client
      * @param string $name
      * @return AbstractApi
      *
-     * @throws ClientException
+     * @throws \InvalidArgumentException
      */
     private function api($name)
     {

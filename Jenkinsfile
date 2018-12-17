@@ -12,15 +12,10 @@ pipeline {
         sh 'docker-compose run --rm client bin/parallel-lint --exclude vendor .'
         sh 'docker-compose run --rm client bin/phpcs src/ tests/ --standard=PSR2,PSR12 --report=summary -p'
         sh 'docker-compose run --rm client bin/phpstan analyse -l max src/ tests/'
-        sh 'docker-compose run --rm client bin/phpunit --log-junit ./reports/phpunit.xml  --coverage-xml reports/coverage'
-      }
-    }
-    stage('Parse') {
-      steps {
+        sh 'docker-compose run --rm client bin/phpunit --log-junit ./reports/phpunit.xml --coverage-xml reports/coverage'
         script {
-          def slurper = new XmlSlurper();
-          def text = slurper.parseText(new File(pwd() + "/reports/coverage/index.xml").getText());
-          env.CODE_COV = text.project.directory.totals.lines["@percent"].text();
+          def xml = new XmlSlurper().parseText(new File(pwd() + "/reports/coverage/index.xml").getText());
+          env.CODE_COV = xml.project.directory.totals.lines["@percent"].text();
         }
       }
     }

@@ -15,6 +15,7 @@ class ServiceTicket extends AbstractApi
     public function logoff()
     {
         $this->delete('/serviceTicket');
+        $this->client->setServiceTicket('');
     }
 
     /**
