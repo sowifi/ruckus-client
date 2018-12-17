@@ -4,6 +4,9 @@ namespace SoConnect\RuckusClient\Api;
 
 use Psr\Http\Message\RequestInterface;
 
+/**
+ * Logon / Logoff through service tickets
+ */
 class ServiceTicket extends AbstractApi
 {
     const USERNAME = 'admin';

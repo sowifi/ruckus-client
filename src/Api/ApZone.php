@@ -2,6 +2,9 @@
 
 namespace SoConnect\RuckusClient\Api;
 
+/**
+ * Manage Ruckus Wireless AP Zones
+ */
 class ApZone extends AbstractApi
 {
     /**

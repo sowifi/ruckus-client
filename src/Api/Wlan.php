@@ -2,6 +2,9 @@
 
 namespace SoConnect\RuckusClient\Api;
 
+/**
+ * Manage WLAN configuration
+ */
 class Wlan extends AbstractApi
 {
     /**

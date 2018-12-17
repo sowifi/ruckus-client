@@ -29,6 +29,7 @@ class ServiceTicketTest extends ApiTestCase
     {
         $res = $this->serviceApi->logon();
 
+        $this->assertTrue($this->client->hasServiceTicket());
         $this->assertEquals('5.0.0.0.675', $res['controllerVersion']);
         $this->assertEquals('ST-28-Gc1YMh9iZK9Hb9s4wbDU-sct-rcs-ctr01', $res['serviceTicket']);
     }
@@ -38,8 +39,9 @@ class ServiceTicketTest extends ApiTestCase
      */
     public function testServiceLogoff()
     {
-        $this->serviceApi->logoff();
+        $res = $this->serviceApi->logoff();
 
         $this->assertFalse($this->client->hasServiceTicket());
+        $this->assertEmpty($res);
     }
 }

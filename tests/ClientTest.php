@@ -2,6 +2,7 @@
 
 namespace Test;
 
+use SoConnect\RuckusClient\Api\Ap;
 use SoConnect\RuckusClient\Api\ApZone;
 use SoConnect\RuckusClient\Api\ServiceTicket;
 use SoConnect\RuckusClient\Api\Wlan;
@@ -48,9 +49,10 @@ class ClientTest extends ApiTestCase
     public function apiClassesMappingProvider()
     {
         return [
-            ['wlan', Wlan::class],
-            ['serviceTicket', ServiceTicket::class],
+            ['ap', Ap::class],
             ['apZone', ApZone::class],
+            ['serviceTicket', ServiceTicket::class],
+            ['wlan', Wlan::class],
         ];
     }
 }

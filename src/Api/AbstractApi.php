@@ -36,6 +36,23 @@ abstract class AbstractApi
     }
 
     /**
+     * Generate PATCH request
+     *
+     * @param string $uri
+     * @param array $params
+     *
+     * @return array
+     */
+    protected function patch($uri, array $params = [])
+    {
+        $res = $this->client->getHttp()->patch($this->getUri() . $uri, [
+            RequestOptions::JSON => $params,
+        ]);
+
+        return $this->jsonDecode($res);
+    }
+
+    /**
      * Generate DELETE request
      *
      * @param string $uri
