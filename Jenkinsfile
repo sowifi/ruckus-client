@@ -20,7 +20,7 @@ pipeline {
         script {
           def slurper = new XmlSlurper();
           def text = slurper.parseText(new File(pwd() + "/reports/coverage/index.xml").getText());
-          env.CODE_COV = text.phpunit.project.directory.totals.lines["@percent"].text();
+          env.CODE_COV = text.project.directory.totals.lines["@percent"].text();
         }
       }
     }
