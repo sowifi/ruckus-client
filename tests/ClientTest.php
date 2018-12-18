@@ -20,7 +20,7 @@ class ClientTest extends ApiTestCase
         $this->client->serviceTicket()->logon();
 
         $this->assertTrue($this->client->hasServiceTicket());
-        $this->assertEquals('ST-28-Gc1YMh9iZK9Hb9s4wbDU-sct-rcs-ctr01', $this->client->getServiceTicket());
+        $this->assertEquals('ST-84-ne0Ttad35SutWCRbNpMP-sct-rcs-ctr01', $this->client->getServiceTicket());
 
         $newTicket = 'someAnotherTicket';
         $this->client->setServiceTicket($newTicket);
@@ -30,7 +30,7 @@ class ClientTest extends ApiTestCase
     /**
      * @expectedException \SoConnect\RuckusClient\Exception\ClientException
      */
-    public function testCallThrowsClientException()
+    public function testInvalidCallThrowsClientException()
     {
         $this->client->notExisting();
     }

@@ -32,5 +32,10 @@
     "config": {
         "sort-packages": true,
         "bin-dir": "bin"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "git config core.hooksPath .githooks"
+        ]
     }
 }

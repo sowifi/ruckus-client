@@ -1,0 +1,8 @@
+#!/bin/sh
+
+docker-compose run --rm client bin/parallel-lint --exclude vendor .
+docker-compose run --rm client bin/phpcs src/ tests/ --standard=PSR2,PSR12
+docker-compose run --rm client bin/phpstan analyse -l max src/ tests/
+docker-compose run --rm client bin/phpunit
+
+

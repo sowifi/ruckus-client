@@ -20,11 +20,11 @@
         },
         "headers": {
             "Server": "nginx\/1.12.0",
-            "Date": "Tue, 11 Dec 2018 13:30:15 GMT",
+            "Date": "Tue, 18 Dec 2018 11:19:27 GMT",
             "Content-Type": "text\/plain;charset=UTF-8",
             "Transfer-Encoding": "chunked",
             "Connection": "keep-alive",
-            "Set-Cookie": "JSESSIONID=F991EDFAF7C14A281D60AD464DF63908; Path=\/wsg; HttpOnly",
+            "Set-Cookie": "JSESSIONID=30FDCCEEB708F8173BC3DEEDCF3292BA; Path=\/wsg; HttpOnly",
             "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
             "Pragma": "no-cache",
             "Expires": "0",
@@ -33,42 +33,6 @@
             "X-Content-Type-Options": "nosniff",
             "Vary": "Accept-Encoding"
         },
-        "body": "{\"controllerVersion\":\"5.0.0.0.675\",\"serviceTicket\":\"ST-28-Gc1YMh9iZK9Hb9s4wbDU-sct-rcs-ctr01\"}"
-    }
-},{
-    "request": {
-        "method": "POST",
-        "url": "https:\/\/ruckus.soconnect.com:8443\/wsg\/api\/public\/v7_0\/serviceTicket",
-        "headers": {
-            "Host": "ruckus.soconnect.com:8443",
-            "Expect": null,
-            "Accept-Encoding": null,
-            "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.10",
-            "Content-Type": "application\/json",
-            "Accept": null
-        },
-        "body": "{\"username\":\"admin\",\"password\":\"admin\"}"
-    },
-    "response": {
-        "status": {
-            "http_version": "1.1",
-            "code": "401",
-            "message": ""
-        },
-        "headers": {
-            "Server": "nginx\/1.12.0",
-            "Date": "Wed, 12 Dec 2018 13:27:55 GMT",
-            "Content-Type": "application\/json;charset=UTF-8",
-            "Transfer-Encoding": "chunked",
-            "Connection": "keep-alive",
-            "Set-Cookie": "JSESSIONID=7CDA117CC1A6945C7612F3CC71743370; Path=\/wsg; HttpOnly",
-            "Cache-Control": "no-store",
-            "X-XSS-Protection": "1; mode=block",
-            "X-Frame-Options": "SAMEORIGIN",
-            "X-Content-Type-Options": "nosniff",
-            "Content-Language": "en-US",
-            "Vary": "Accept-Encoding"
-        },
-        "body": "{\"message\":\"User name or password is invalid\",\"errorCode\":202,\"errorType\":\"Login denied\"}"
+        "body": "{\"controllerVersion\":\"5.0.0.0.675\",\"serviceTicket\":\"ST-84-ne0Ttad35SutWCRbNpMP-sct-rcs-ctr01\"}"
     }
 }]
