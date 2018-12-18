@@ -1,0 +1,72 @@
+[{
+    "request": {
+        "method": "POST",
+        "url": "https:\/\/ruckus.soconnect.com:8443\/wsg\/api\/public\/v7_0\/serviceTicket",
+        "headers": {
+            "Host": "ruckus.soconnect.com:8443",
+            "Expect": null,
+            "Accept-Encoding": null,
+            "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.10",
+            "Content-Type": "application\/json",
+            "Accept": null
+        },
+        "body": "{\"username\":\"admin\",\"password\":\"Fietstas1314!\"}"
+    },
+    "response": {
+        "status": {
+            "http_version": "1.1",
+            "code": "200",
+            "message": ""
+        },
+        "headers": {
+            "Server": "nginx\/1.12.0",
+            "Date": "Tue, 18 Dec 2018 11:02:36 GMT",
+            "Content-Type": "text\/plain;charset=UTF-8",
+            "Transfer-Encoding": "chunked",
+            "Connection": "keep-alive",
+            "Set-Cookie": "JSESSIONID=03BF1398901C917D41754767646246C6; Path=\/wsg; HttpOnly",
+            "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+            "Pragma": "no-cache",
+            "Expires": "0",
+            "X-XSS-Protection": "1; mode=block",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Content-Type-Options": "nosniff",
+            "Vary": "Accept-Encoding"
+        },
+        "body": "{\"controllerVersion\":\"5.0.0.0.675\",\"serviceTicket\":\"ST-80-mgJKkXkDfI99gGwtjs2d-sct-rcs-ctr01\"}"
+    }
+},{
+    "request": {
+        "method": "GET",
+        "url": "https:\/\/ruckus.soconnect.com:8443\/wsg\/api\/public\/v7_0\/aps?serviceTicket=ST-80-mgJKkXkDfI99gGwtjs2d-sct-rcs-ctr01",
+        "headers": {
+            "Host": "ruckus.soconnect.com:8443",
+            "Accept-Encoding": null,
+            "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.10",
+            "Accept": null
+        }
+    },
+    "response": {
+        "status": {
+            "http_version": "1.1",
+            "code": "200",
+            "message": ""
+        },
+        "headers": {
+            "Server": "nginx\/1.12.0",
+            "Date": "Tue, 18 Dec 2018 11:02:36 GMT",
+            "Content-Type": "text\/plain;charset=UTF-8",
+            "Transfer-Encoding": "chunked",
+            "Connection": "keep-alive",
+            "Set-Cookie": "JSESSIONID=5FFB28F630B4696FDAC08870F9E1BEB2; Path=\/wsg; HttpOnly",
+            "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+            "Pragma": "no-cache",
+            "Expires": "0",
+            "X-XSS-Protection": "1; mode=block",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Content-Type-Options": "nosniff",
+            "Vary": "Accept-Encoding"
+        },
+        "body": "{\"totalCount\":1,\"hasMore\":false,\"firstIndex\":0,\"list\":[{\"mac\":\"F8:E7:1E:0E:EA:60\",\"zoneId\":\"16adc469-8a48-47b8-b431-7164ceb0f4eb\",\"apGroupId\":\"4896cd08-b9b8-44c3-b546-fbaef46340b1\",\"serial\":\"911609000515\",\"name\":\"RuckusAP\"}]}"
+    }
+}]

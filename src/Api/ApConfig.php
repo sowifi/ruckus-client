@@ -5,7 +5,7 @@ namespace SoConnect\RuckusClient\Api;
 /**
  * Access Point configuration
  */
-class Ap extends AbstractApi
+class ApConfig extends AbstractApi
 {
     /**
      * Retrieve the list of APs that belong to a zone or a domain.

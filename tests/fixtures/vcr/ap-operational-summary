@@ -20,11 +20,11 @@
         },
         "headers": {
             "Server": "nginx\/1.12.0",
-            "Date": "Mon, 17 Dec 2018 16:01:26 GMT",
+            "Date": "Tue, 18 Dec 2018 11:02:37 GMT",
             "Content-Type": "text\/plain;charset=UTF-8",
             "Transfer-Encoding": "chunked",
             "Connection": "keep-alive",
-            "Set-Cookie": "JSESSIONID=E6B3FDC223EEC9669D00C744B4919E77; Path=\/wsg; HttpOnly",
+            "Set-Cookie": "JSESSIONID=314DB77826A609277FC9608D2BE26E66; Path=\/wsg; HttpOnly",
             "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
             "Pragma": "no-cache",
             "Expires": "0",
@@ -33,40 +33,40 @@
             "X-Content-Type-Options": "nosniff",
             "Vary": "Accept-Encoding"
         },
-        "body": "{\"controllerVersion\":\"5.0.0.0.675\",\"serviceTicket\":\"ST-74-TfkYughlaJi9YbIfujPD-sct-rcs-ctr01\"}"
+        "body": "{\"controllerVersion\":\"5.0.0.0.675\",\"serviceTicket\":\"ST-82-SRJuOc6rFfj2KEUuKACR-sct-rcs-ctr01\"}"
     }
 },{
     "request": {
-        "method": "PATCH",
-        "url": "https:\/\/ruckus.soconnect.com:8443\/wsg\/api\/public\/v7_0\/aps\/F8:E7:1E:0E:EA:60?serviceTicket=ST-74-TfkYughlaJi9YbIfujPD-sct-rcs-ctr01",
+        "method": "GET",
+        "url": "https:\/\/ruckus.soconnect.com:8443\/wsg\/api\/public\/v7_0\/aps\/F8:E7:1E:0E:EA:60\/operational\/summary?serviceTicket=ST-82-SRJuOc6rFfj2KEUuKACR-sct-rcs-ctr01",
         "headers": {
             "Host": "ruckus.soconnect.com:8443",
-            "Expect": null,
             "Accept-Encoding": null,
             "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.10",
-            "Content-Type": "application\/json",
             "Accept": null
-        },
-        "body": "{\"zoneId\":\"16adc469-8a48-47b8-b431-7164ceb0f4eb\"}"
+        }
     },
     "response": {
         "status": {
             "http_version": "1.1",
-            "code": "204",
+            "code": "200",
             "message": ""
         },
         "headers": {
             "Server": "nginx\/1.12.0",
-            "Date": "Mon, 17 Dec 2018 16:01:26 GMT",
+            "Date": "Tue, 18 Dec 2018 11:02:38 GMT",
             "Content-Type": "text\/plain;charset=UTF-8",
+            "Transfer-Encoding": "chunked",
             "Connection": "keep-alive",
-            "Set-Cookie": "JSESSIONID=9703EBEBD16D4893A26E2E4BF613CF2D; Path=\/wsg; HttpOnly",
+            "Set-Cookie": "JSESSIONID=01431FBB968ED1677E3E451A854187E7; Path=\/wsg; HttpOnly",
             "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
             "Pragma": "no-cache",
             "Expires": "0",
             "X-XSS-Protection": "1; mode=block",
             "X-Frame-Options": "SAMEORIGIN",
-            "X-Content-Type-Options": "nosniff"
-        }
+            "X-Content-Type-Options": "nosniff",
+            "Vary": "Accept-Encoding"
+        },
+        "body": "{\"mac\":\"F8:E7:1E:0E:EA:60\",\"zoneId\":\"16adc469-8a48-47b8-b431-7164ceb0f4eb\",\"apGroupId\":\"4896cd08-b9b8-44c3-b546-fbaef46340b1\",\"serial\":\"911609000515\",\"model\":\"R310\",\"name\":\"RuckusAP\",\"description\":null,\"latitude\":null,\"longitude\":null,\"location\":\"\",\"administrativeState\":\"Unlocked\",\"version\":\"5.0.0.0.753\",\"countryCode\":\"NL\",\"cpId\":\"3200c388-871e-4d1e-bed0-0f0bf3732385\",\"dpId\":null,\"wifi24Channel\":\"4\",\"wifi50Channel\":\"36\",\"meshRole\":null,\"meshHop\":null,\"ip\":\"192.168.3.88\",\"ipType\":\"Dynamic\",\"externalIp\":\"192.168.3.88\",\"externalPort\":52125,\"configState\":\"newConfig\",\"connectionState\":\"Disconnect\",\"registrationState\":\"Approved\",\"provisionMethod\":\"Discovered\",\"provisionStage\":null,\"isCriticalAP\":false,\"approvedTime\":1541165011900,\"lastSeenTime\":1542018616633,\"uptime\":-1,\"clientCount\":0,\"managementVlan\":1}"
     }
 }]

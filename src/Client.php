@@ -12,9 +12,10 @@ use SoConnect\RuckusClient\Handler\ServiceTicketHandler;
 /**
  * Ruckus WLAN controller API client
  *
- * @method Api\Ap ap()
- * @method Api\ApZone apZone()
  * @method Api\ServiceTicket serviceTicket()
+ * @method Api\ApZone apZone()
+ * @method Api\ApConfig apConfig()
+ * @method Api\ApOperational apOperational()
  * @method Api\Wlan wlan()
  */
 class Client
@@ -60,7 +61,7 @@ class Client
     /**
      * @param string $serviceTicket
      */
-    public function setServiceTicket(string $serviceTicket)
+    public function setServiceTicket($serviceTicket)
     {
         $this->serviceTicket = $serviceTicket;
     }
@@ -123,12 +124,14 @@ class Client
     private function api($name)
     {
         switch ($name) {
-            case 'ap':
-                return new Api\Ap($this);
-            case 'apZone':
-                return new Api\ApZone($this);
             case 'serviceTicket':
                 return new Api\ServiceTicket($this);
+            case 'apZone':
+                return new Api\ApZone($this);
+            case 'apConfig':
+                return new Api\ApConfig($this);
+            case 'apOperational':
+                return new Api\ApOperational($this);
             case 'wlan':
                 return new Api\Wlan($this);
             default:
