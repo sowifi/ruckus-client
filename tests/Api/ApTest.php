@@ -30,7 +30,7 @@ class ApTest extends ApiTestCase
         $res = $this->apApi->list();
 
         $this->assertEquals(1, $res['totalCount']);
-        $this->assertEquals('F8:E7:1E:0E:EA:60' ,$res['list'][0]['mac']);
+        $this->assertEquals('F8:E7:1E:0E:EA:60', $res['list'][0]['mac']);
     }
 
     /**
