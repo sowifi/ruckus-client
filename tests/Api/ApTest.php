@@ -23,6 +23,17 @@ class ApTest extends ApiTestCase
     }
 
     /**
+     * @vcr ap-list
+     */
+    public function testList()
+    {
+        $res = $this->apApi->list();
+
+        $this->assertEquals(1, $res['totalCount']);
+        $this->assertEquals('F8:E7:1E:0E:EA:60' ,$res['list'][0]['mac']);
+    }
+
+    /**
      * @vcr ap-modify
      */
     public function testModify()

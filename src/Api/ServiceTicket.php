@@ -14,11 +14,15 @@ class ServiceTicket extends AbstractApi
 
     /**
      * Log off of the controller.
+     *
+     * @return array
      */
     public function logoff()
     {
-        $this->delete('/serviceTicket');
+        $res = $this->delete('/serviceTicket');
         $this->client->setServiceTicket('');
+
+        return $res;
     }
 
     /**

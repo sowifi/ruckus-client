@@ -20,11 +20,11 @@
         },
         "headers": {
             "Server": "nginx\/1.12.0",
-            "Date": "Tue, 18 Dec 2018 10:30:42 GMT",
+            "Date": "Tue, 18 Dec 2018 10:10:36 GMT",
             "Content-Type": "text\/plain;charset=UTF-8",
             "Transfer-Encoding": "chunked",
             "Connection": "keep-alive",
-            "Set-Cookie": "JSESSIONID=4DD9C1D956AA8FE3B18A282900C5C87C; Path=\/wsg; HttpOnly",
+            "Set-Cookie": "JSESSIONID=AFE39E6CE26BC05D3C9E272E40F071BA; Path=\/wsg; HttpOnly",
             "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
             "Pragma": "no-cache",
             "Expires": "0",
@@ -33,12 +33,12 @@
             "X-Content-Type-Options": "nosniff",
             "Vary": "Accept-Encoding"
         },
-        "body": "{\"controllerVersion\":\"5.0.0.0.675\",\"serviceTicket\":\"ST-78-eMbXHKvxzY9Vb4cCJx0y-sct-rcs-ctr01\"}"
+        "body": "{\"controllerVersion\":\"5.0.0.0.675\",\"serviceTicket\":\"ST-76-CQfhr99gGXPPwAKDyosy-sct-rcs-ctr01\"}"
     }
 },{
     "request": {
-        "method": "DELETE",
-        "url": "https:\/\/ruckus.soconnect.com:8443\/wsg\/api\/public\/v7_0\/serviceTicket?serviceTicket=ST-78-eMbXHKvxzY9Vb4cCJx0y-sct-rcs-ctr01",
+        "method": "GET",
+        "url": "https:\/\/ruckus.soconnect.com:8443\/wsg\/api\/public\/v7_0\/aps?serviceTicket=ST-76-CQfhr99gGXPPwAKDyosy-sct-rcs-ctr01",
         "headers": {
             "Host": "ruckus.soconnect.com:8443",
             "Accept-Encoding": null,
@@ -54,16 +54,19 @@
         },
         "headers": {
             "Server": "nginx\/1.12.0",
-            "Date": "Tue, 18 Dec 2018 10:30:42 GMT",
-            "Content-Length": "0",
+            "Date": "Tue, 18 Dec 2018 10:10:36 GMT",
+            "Content-Type": "text\/plain;charset=UTF-8",
+            "Transfer-Encoding": "chunked",
             "Connection": "keep-alive",
-            "Set-Cookie": "JSESSIONID=8B516B4EDDA8DDEBA38F552082991CFA; Path=\/wsg; HttpOnly",
+            "Set-Cookie": "JSESSIONID=E2C117366C858CEF1856B8EEA1A60A21; Path=\/wsg; HttpOnly",
             "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
             "Pragma": "no-cache",
             "Expires": "0",
             "X-XSS-Protection": "1; mode=block",
             "X-Frame-Options": "SAMEORIGIN",
-            "X-Content-Type-Options": "nosniff"
-        }
+            "X-Content-Type-Options": "nosniff",
+            "Vary": "Accept-Encoding"
+        },
+        "body": "{\"totalCount\":1,\"hasMore\":false,\"firstIndex\":0,\"list\":[{\"mac\":\"F8:E7:1E:0E:EA:60\",\"zoneId\":\"16adc469-8a48-47b8-b431-7164ceb0f4eb\",\"apGroupId\":\"4896cd08-b9b8-44c3-b546-fbaef46340b1\",\"serial\":\"911609000515\",\"name\":\"RuckusAP\"}]}"
     }
 }]

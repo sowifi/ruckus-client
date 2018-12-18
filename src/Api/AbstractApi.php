@@ -19,54 +19,52 @@ abstract class AbstractApi
     }
 
     /**
+     * Generate GET request
+     *
+     * @param string $uri
+     * @return array
+     */
+    protected function get($uri)
+    {
+        return $this->doRequest($uri, 'get');
+    }
+
+    /**
      * Generate POST request
      *
      * @param string $uri
-     * @param array $params
+     * @param array $body
      *
      * @return array
      */
-    protected function post($uri, array $params = [])
+    protected function post($uri, array $body = [])
     {
-        $res = $this->client->getHttp()->post($this->getUri() . $uri, [
-            RequestOptions::JSON => $params,
-        ]);
-
-        return $this->jsonDecode($res);
+        return $this->doRequest($uri, 'post', $body);
     }
 
     /**
      * Generate PATCH request
      *
      * @param string $uri
-     * @param array $params
+     * @param array $body
      *
      * @return array
      */
-    protected function patch($uri, array $params = [])
+    protected function patch($uri, array $body = [])
     {
-        $res = $this->client->getHttp()->patch($this->getUri() . $uri, [
-            RequestOptions::JSON => $params,
-        ]);
-
-        return $this->jsonDecode($res);
+        return $this->doRequest($uri, 'patch', $body);
     }
 
     /**
      * Generate DELETE request
      *
      * @param string $uri
-     * @param array $params
      *
      * @return array
      */
-    protected function delete($uri, array $params = [])
+    protected function delete($uri)
     {
-        $res = $this->client->getHttp()->delete($this->getUri() . $uri, [
-            RequestOptions::JSON => $params,
-        ]);
-
-        return $this->jsonDecode($res);
+        return $this->doRequest($uri, 'delete');
     }
 
     /**
@@ -86,6 +84,28 @@ abstract class AbstractApi
      */
     protected function jsonDecode(ResponseInterface $res)
     {
+        if ($res->getBody()->getSize() === 0) {
+            return [];
+        }
+
         return json_decode($res->getBody(), true);
+    }
+
+    /**
+     * @param string $uri
+     * @param string $method
+     * @param array $body
+     *
+     * @return array
+     */
+    protected function doRequest($uri, $method, $body = [])
+    {
+        $options = [];
+        if (!empty($body)) {
+            $options = [RequestOptions::JSON => $body];
+        }
+        $res = $this->client->getHttp()->$method($this->getUri() . $uri, $options);
+
+        return $this->jsonDecode($res);
     }
 }
