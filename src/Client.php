@@ -19,7 +19,7 @@ use SoConnect\RuckusClient\Handler\ServiceTicketHandler;
  */
 class Client
 {
-    const BASE_URI = '%s/wsg/api/public/%s';
+    const BASE_URI_FORMAT = '%s/wsg/api/public/%s';
 
     /**
      * @var HttpClient
@@ -29,7 +29,7 @@ class Client
     /**
      * @var string
      */
-    private $uri;
+    private $baseUri;
 
     /**
      * @var string
@@ -46,7 +46,7 @@ class Client
         $stack = HandlerStack::create($handler);
         $stack->push(new ServiceTicketHandler($this));
         $this->http = new HttpClient(['handler' => $stack]);
-        $this->uri = sprintf(self::BASE_URI, $host, $version);
+        $this->baseUri = sprintf(self::BASE_URI_FORMAT, $host, $version);
     }
 
     /**
@@ -107,9 +107,9 @@ class Client
     /**
      * @return string
      */
-    public function getUri(): string
+    public function getBaseUri(): string
     {
-        return $this->uri;
+        return $this->baseUri;
     }
 
     /**

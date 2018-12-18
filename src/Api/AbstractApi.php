@@ -26,7 +26,7 @@ abstract class AbstractApi
      */
     protected function get($uri)
     {
-        return $this->doRequest($uri, 'get');
+        return $this->doRequest('get', $uri);
     }
 
     /**
@@ -39,7 +39,7 @@ abstract class AbstractApi
      */
     protected function post($uri, array $body = [])
     {
-        return $this->doRequest($uri, 'post', $body);
+        return $this->doRequest('post', $uri, $body);
     }
 
     /**
@@ -52,7 +52,7 @@ abstract class AbstractApi
      */
     protected function patch($uri, array $body = [])
     {
-        return $this->doRequest($uri, 'patch', $body);
+        return $this->doRequest('patch', $uri, $body);
     }
 
     /**
@@ -64,7 +64,25 @@ abstract class AbstractApi
      */
     protected function delete($uri)
     {
-        return $this->doRequest($uri, 'delete');
+        return $this->doRequest('delete', $uri);
+    }
+
+    /**
+     * @param string $method
+     * @param string $uri
+     * @param array $body
+     *
+     * @return array
+     */
+    protected function doRequest($method, $uri, $body = [])
+    {
+        $options = [];
+        if (!empty($body)) {
+            $options = [RequestOptions::JSON => $body];
+        }
+        $res = $this->client->getHttp()->$method($this->getUri() . $uri, $options);
+
+        return $this->jsonDecode($res);
     }
 
     /**
@@ -72,7 +90,7 @@ abstract class AbstractApi
      */
     protected function getUri()
     {
-        return $this->client->getUri();
+        return $this->client->getBaseUri();
     }
 
     /**
@@ -89,23 +107,5 @@ abstract class AbstractApi
         }
 
         return json_decode($res->getBody(), true);
-    }
-
-    /**
-     * @param string $uri
-     * @param string $method
-     * @param array $body
-     *
-     * @return array
-     */
-    protected function doRequest($uri, $method, $body = [])
-    {
-        $options = [];
-        if (!empty($body)) {
-            $options = [RequestOptions::JSON => $body];
-        }
-        $res = $this->client->getHttp()->$method($this->getUri() . $uri, $options);
-
-        return $this->jsonDecode($res);
     }
 }

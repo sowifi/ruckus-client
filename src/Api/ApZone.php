@@ -10,12 +10,12 @@ class ApZone extends AbstractApi
     /**
      * Create a new Ruckus Wireless AP zone.
      *
-     * @param array $params
+     * @param array $body
      *
      * @return array
      */
-    public function createZone(array $params)
+    public function createZone(array $body)
     {
-        return $this->post('/rkszones', $params);
+        return $this->post('/rkszones', $body);
     }
 }

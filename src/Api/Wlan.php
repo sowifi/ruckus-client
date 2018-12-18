@@ -11,25 +11,25 @@ class Wlan extends AbstractApi
      * Create a new standard, 802.1X and non-tunneled WLAN.
      *
      * @param string $zoneId
-     * @param array $params
+     * @param array $body
      *
      * @return array
      */
-    public function create8021x($zoneId, array $params)
+    public function create8021x($zoneId, array $body)
     {
-        return $this->post('/rkszones/' . $zoneId . '/wlans/standard8021X', $params);
+        return $this->post('/rkszones/' . $zoneId . '/wlans/standard8021X', $body);
     }
 
     /**
      * Create new hotspot (WISPr) WLAN.
      *
      * @param string $zoneId
-     * @param array $params
+     * @param array $body
      *
      * @return array
      */
-    public function createWispr($zoneId, array $params)
+    public function createWispr($zoneId, array $body)
     {
-        return $this->post('/rkszones/' . $zoneId . '/wlans/wispr', $params);
+        return $this->post('/rkszones/' . $zoneId . '/wlans/wispr', $body);
     }
 }
