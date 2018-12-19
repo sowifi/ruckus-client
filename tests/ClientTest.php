@@ -36,7 +36,9 @@ class ClientTest extends ApiTestCase
     }
 
     /**
-     * @test
+     * @param string $apiName
+     * @param string $class
+     *
      * @dataProvider apiClassesMappingProvider
      */
     public function testShouldGetApiInstance($apiName, $class)

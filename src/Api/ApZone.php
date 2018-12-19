@@ -14,8 +14,19 @@ class ApZone extends AbstractApi
      *
      * @return array
      */
-    public function createZone(array $body)
+    public function create(array $body)
     {
         return $this->post('/rkszones', $body);
+    }
+
+    /**
+     * Delete a zone.
+     *
+     * @param string $zoneId
+     * @return array
+     */
+    public function deleteZone($zoneId)
+    {
+        return $this->delete('/rkszones/' . $zoneId);
     }
 }

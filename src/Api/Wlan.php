@@ -32,4 +32,18 @@ class Wlan extends AbstractApi
     {
         return $this->post('/rkszones/' . $zoneId . '/wlans/wispr', $body);
     }
+
+    /**
+     * Modify the basic information of a WLAN.
+     *
+     * @param string $zoneId
+     * @param string $wlanId
+     * @param array $body
+     *
+     * @return array
+     */
+    public function modify($zoneId, $wlanId, array $body)
+    {
+        return $this->patch('/rkszones/' . $zoneId . '/wlans/' . $wlanId, $body);
+    }
 }

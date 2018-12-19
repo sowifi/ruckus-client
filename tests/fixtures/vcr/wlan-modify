@@ -1,0 +1,72 @@
+[{
+    "request": {
+        "method": "POST",
+        "url": "https:\/\/ruckus.soconnect.com:8443\/wsg\/api\/public\/v7_0\/serviceTicket",
+        "headers": {
+            "Host": "ruckus.soconnect.com:8443",
+            "Expect": null,
+            "Accept-Encoding": null,
+            "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.10",
+            "Content-Type": "application\/json",
+            "Accept": null
+        },
+        "body": "{\"username\":\"admin\",\"password\":\"Fietstas1314!\"}"
+    },
+    "response": {
+        "status": {
+            "http_version": "1.1",
+            "code": "200",
+            "message": ""
+        },
+        "headers": {
+            "Server": "nginx\/1.12.0",
+            "Date": "Wed, 19 Dec 2018 15:43:03 GMT",
+            "Content-Type": "text\/plain;charset=UTF-8",
+            "Transfer-Encoding": "chunked",
+            "Connection": "keep-alive",
+            "Set-Cookie": "JSESSIONID=BBD8098F4C9D10C350B9EB20FDB941FF; Path=\/wsg; HttpOnly",
+            "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+            "Pragma": "no-cache",
+            "Expires": "0",
+            "X-XSS-Protection": "1; mode=block",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Content-Type-Options": "nosniff",
+            "Vary": "Accept-Encoding"
+        },
+        "body": "{\"controllerVersion\":\"5.0.0.0.675\",\"serviceTicket\":\"ST-91-eUMfJnCfeJef0EmOvxAZ-sct-rcs-ctr01\"}"
+    }
+},{
+    "request": {
+        "method": "PATCH",
+        "url": "https:\/\/ruckus.soconnect.com:8443\/wsg\/api\/public\/v7_0\/rkszones\/4757aaa9-aa3b-4acf-9731-8970049d9109\/wlans\/27?serviceTicket=ST-91-eUMfJnCfeJef0EmOvxAZ-sct-rcs-ctr01",
+        "headers": {
+            "Host": "ruckus.soconnect.com:8443",
+            "Expect": null,
+            "Accept-Encoding": null,
+            "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.10",
+            "Content-Type": "application\/json",
+            "Accept": null
+        },
+        "body": "{\"name\":\"Some Another Test Name\"}"
+    },
+    "response": {
+        "status": {
+            "http_version": "1.1",
+            "code": "204",
+            "message": ""
+        },
+        "headers": {
+            "Server": "nginx\/1.12.0",
+            "Date": "Wed, 19 Dec 2018 15:43:04 GMT",
+            "Content-Type": "text\/plain;charset=UTF-8",
+            "Connection": "keep-alive",
+            "Set-Cookie": "JSESSIONID=AF7DF0EB9792C62EBC383C7F576C3485; Path=\/wsg; HttpOnly",
+            "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+            "Pragma": "no-cache",
+            "Expires": "0",
+            "X-XSS-Protection": "1; mode=block",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Content-Type-Options": "nosniff"
+        }
+    }
+}]

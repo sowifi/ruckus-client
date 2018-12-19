@@ -12,7 +12,7 @@ Example Usage
 #### Get the list of Access Points
 ```php
 $client = new SoConnect\RuckusClient\Client($host);
-$res = $client->apConfig()->list();
+$res = $client->apConfig()->listAll();
 ```
 
 #### Create new hotspot WLAN

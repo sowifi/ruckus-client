@@ -25,7 +25,7 @@ class ServiceTicketTest extends ApiTestCase
     /**
      * @vcr service-logon
      */
-    public function testServiceLogon()
+    public function testLogon()
     {
         $res = $this->serviceApi->logon();
 
@@ -37,7 +37,7 @@ class ServiceTicketTest extends ApiTestCase
     /**
      * @vcr service-logoff
      */
-    public function testServiceLogoff()
+    public function testLogoff()
     {
         $res = $this->serviceApi->logoff();
 

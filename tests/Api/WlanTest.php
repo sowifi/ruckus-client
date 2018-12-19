@@ -25,7 +25,7 @@ class WlanTest extends ApiTestCase
     /**
      * @vcr wlan-create-standard8021x
      */
-    public function testWlanCreateStandard8021x()
+    public function testCreateStandard8021x()
     {
         $res = $this->wlanApi->create8021x('4757aaa9-aa3b-4acf-9731-8970049d9109', [
             'name' => 'Test Name Unit',
@@ -42,7 +42,7 @@ class WlanTest extends ApiTestCase
     /**
      * @vcr wlan-create-wispr
      */
-    public function testWlanCreateWispr()
+    public function testCreateWispr()
     {
         $res = $this->wlanApi->createWispr('4757aaa9-aa3b-4acf-9731-8970049d9109', [
             'name' => 'Test Name Wispr Unit',
@@ -57,5 +57,17 @@ class WlanTest extends ApiTestCase
         ]);
 
         $this->assertEquals('27', $res['id']);
+    }
+
+    /**
+     * @vcr wlan-modify
+     */
+    public function testModify()
+    {
+        $res = $this->wlanApi->modify('4757aaa9-aa3b-4acf-9731-8970049d9109', 27, [
+            'name' => 'Some Another Test Name',
+        ]);
+
+        $this->assertEmpty($res);
     }
 }

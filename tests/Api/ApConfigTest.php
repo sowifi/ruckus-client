@@ -27,7 +27,7 @@ class ApConfigTest extends ApiTestCase
      */
     public function testList()
     {
-        $res = $this->apConfigApi->list();
+        $res = $this->apConfigApi->listAll();
 
         $this->assertEquals(1, $res['totalCount']);
         $this->assertEquals('F8:E7:1E:0E:EA:60', $res['list'][0]['mac']);

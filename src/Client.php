@@ -108,7 +108,7 @@ class Client
     /**
      * @return string
      */
-    public function getBaseUri(): string
+    public function getBaseUri()
     {
         return $this->baseUri;
     }
