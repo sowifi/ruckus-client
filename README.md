@@ -4,32 +4,42 @@ Ruckus WLAN controller API client
 
 Requirements
 ------------
-* [PHP 7.2](http://php.net)
-* [Composer](https://getcomposer.org) 
-* [PHPUnit](https://phpunit.de/getting-started.html)
+* [docker](https://www.docker.com/)
+* [docker-compose](https://docs.docker.com/compose/install/) 
 
-Running
------------
+Example Usage
+-------
+#### Get the list of Access Points
+```php
+$client = new SoConnect\RuckusClient\Client($host);
+$res = $client->apConfig()->list();
+```
+
+#### Create new hotspot WLAN
+```php
+$client = new SoConnect\RuckusClient\Client($host);
+$res = $client->wlan()->createWispr($zoneId, $body);
+```
+
+Development
+-------
+### Running
 ```bash
 docker-compose up -d
 ```
 
-Installing Dependencies
------------
+### Installing Dependencies
 ```bash
-docker-compose run --rm client composer install
+docker-compose exec client composer install
 ```
 
-Configuration
------------
-All the configuration is stored in the environment variables. For the development/local configuration check `.env` file  
-
-To override any of the config values locally, create `.env.override`  file in the root of the repository
-
-Testing
--------
+### Testing
 Unit & integration tests are provided in the `/tests` folder. To run these tests simply run following command from the project root.
 
 ```bash
-docker-compose run --rm client bin/phpunit
+docker-compose exec client bin/phpunit
 ```
+
+#### VCR
+Project is using `PHP-VCR` snapshots for the integration testing of Ruckus API responses integrated with PHPUnit through `phpunit-testlistener-vcr`.
+* See [php-vcr](https://github.com/php-vcr/php-vcr) for details
