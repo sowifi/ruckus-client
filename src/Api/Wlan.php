@@ -37,7 +37,7 @@ class Wlan extends AbstractApi
      * Modify the basic information of a WLAN.
      *
      * @param string $zoneId
-     * @param string $wlanId
+     * @param int $wlanId
      * @param array $body
      *
      * @return array
