@@ -21,7 +21,7 @@ $client = new SoConnect\RuckusClient\Client($host);
 $res = $client->wlan()->createWispr($zoneId, $body);
 ```
 
-Configuration
+Configuration 
 -------
 Configuration is done using environment variables following 12-factor app methodology. Look at `getenv()` PHP function for details.
 `.env.example` file contains possible config variables. Create `.env` file to use in the test execution.
