@@ -4,8 +4,14 @@ Ruckus WLAN controller API client
 
 Requirements
 ------------
-* [docker](https://www.docker.com/)
-* [docker-compose](https://docs.docker.com/compose/install/) 
+* PHP >= 5.6
+
+Installation
+-------
+With composer:
+```bash
+composer require soconnect/ruckus-client
+```
 
 Example Usage
 -------
