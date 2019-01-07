@@ -1,4 +1,4 @@
-Ruckus Client
+Ruckus Client 
 ===============
 Ruckus WLAN controller API client
 
