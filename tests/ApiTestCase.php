@@ -19,6 +19,6 @@ abstract class ApiTestCase extends TestCase
     {
         parent::setUp();
 
-        $this->client = new Client('https://ruckus.soconnect.com:8443');
+        $this->client = new Client();
     }
 }

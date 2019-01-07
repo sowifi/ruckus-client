@@ -9,9 +9,6 @@ use Psr\Http\Message\RequestInterface;
  */
 class ServiceTicket extends AbstractApi
 {
-    const USERNAME = 'admin';
-    const USERPASS = 'Fietstas1314!';
-
     /**
      * Log off of the controller.
      *
@@ -33,8 +30,8 @@ class ServiceTicket extends AbstractApi
     public function logon()
     {
         $res = $this->post('/serviceTicket', [
-            'username' => self::USERNAME,
-            'password' => self::USERPASS
+            'username' => getenv('RUCKUS_CONTROL_USER'),
+            'password' => getenv('RUCKUS_CONTROL_PASS'),
         ]);
         $this->client->setServiceTicket($res['serviceTicket']);
 

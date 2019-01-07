@@ -1,16 +1,16 @@
 [{
     "request": {
         "method": "POST",
-        "url": "https:\/\/ruckus.soconnect.com:8443\/wsg\/api\/public\/v7_0\/serviceTicket",
+        "url": "https:\/\/192.168.3.167:8443\/wsg\/api\/public\/v7_0\/serviceTicket",
         "headers": {
-            "Host": "ruckus.soconnect.com:8443",
+            "Host": "192.168.3.167:8443",
             "Expect": null,
             "Accept-Encoding": null,
             "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.10",
             "Content-Type": "application\/json",
             "Accept": null
         },
-        "body": "{\"username\":\"admin\",\"password\":\"Fietstas1314!\"}"
+        "body": "{\"username\":\"admin\"}"
     },
     "response": {
         "status": {
@@ -20,11 +20,11 @@
         },
         "headers": {
             "Server": "nginx\/1.12.0",
-            "Date": "Tue, 18 Dec 2018 11:02:37 GMT",
+            "Date": "Mon, 07 Jan 2019 09:11:55 GMT",
             "Content-Type": "text\/plain;charset=UTF-8",
             "Transfer-Encoding": "chunked",
             "Connection": "keep-alive",
-            "Set-Cookie": "JSESSIONID=314DB77826A609277FC9608D2BE26E66; Path=\/wsg; HttpOnly",
+            "Set-Cookie": "JSESSIONID=05FFA3895D37E9F411A7B3BBA5E19850; Path=\/wsg; HttpOnly",
             "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
             "Pragma": "no-cache",
             "Expires": "0",
@@ -33,18 +33,19 @@
             "X-Content-Type-Options": "nosniff",
             "Vary": "Accept-Encoding"
         },
-        "body": "{\"controllerVersion\":\"5.0.0.0.675\",\"serviceTicket\":\"ST-82-SRJuOc6rFfj2KEUuKACR-sct-rcs-ctr01\"}"
+        "body": "{\"controllerVersion\":\"5.0.0.0.675\",\"serviceTicket\":\"ST-112-iimwhC0a0ImaMdFvPBf6-sct-rcs-ctr01\"}"
     }
 },{
     "request": {
         "method": "GET",
-        "url": "https:\/\/ruckus.soconnect.com:8443\/wsg\/api\/public\/v7_0\/aps\/F8:E7:1E:0E:EA:60\/operational\/summary?serviceTicket=ST-82-SRJuOc6rFfj2KEUuKACR-sct-rcs-ctr01",
+        "url": "https:\/\/192.168.3.167:8443\/wsg\/api\/public\/v7_0\/aps\/F8:E7:1E:0E:EA:60\/operational\/summary?",
         "headers": {
-            "Host": "ruckus.soconnect.com:8443",
+            "Host": "192.168.3.167:8443",
             "Accept-Encoding": null,
             "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.10",
             "Accept": null
-        }
+        },
+        "body": "null"
     },
     "response": {
         "status": {
@@ -54,11 +55,11 @@
         },
         "headers": {
             "Server": "nginx\/1.12.0",
-            "Date": "Tue, 18 Dec 2018 11:02:38 GMT",
+            "Date": "Mon, 07 Jan 2019 09:11:55 GMT",
             "Content-Type": "text\/plain;charset=UTF-8",
             "Transfer-Encoding": "chunked",
             "Connection": "keep-alive",
-            "Set-Cookie": "JSESSIONID=01431FBB968ED1677E3E451A854187E7; Path=\/wsg; HttpOnly",
+            "Set-Cookie": "JSESSIONID=B66BBCED27BF9BB88B790E0EA4ED3B16; Path=\/wsg; HttpOnly",
             "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
             "Pragma": "no-cache",
             "Expires": "0",

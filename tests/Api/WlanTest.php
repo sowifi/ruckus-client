@@ -36,7 +36,7 @@ class WlanTest extends ApiTestCase
             ]
         ]);
 
-        $this->assertEquals('26', $res['id']);
+        $this->assertEquals('38', $res['id']);
     }
 
     /**
@@ -56,7 +56,7 @@ class WlanTest extends ApiTestCase
             ]
         ]);
 
-        $this->assertEquals('27', $res['id']);
+        $this->assertEquals('39', $res['id']);
     }
 
     /**

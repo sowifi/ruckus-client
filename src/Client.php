@@ -41,8 +41,12 @@ class Client
      * @param string $host
      * @param string $version
      */
-    public function __construct($host, $version = 'v7_0')
+    public function __construct($host = '', $version = 'v7_0')
     {
+        if (empty($host)) {
+            $host = getenv('RUCKUS_CONTROL_HOST');
+        }
+
         $handler = new CurlHandler();
         $stack = HandlerStack::create($handler);
         $stack->push(new ServiceTicketHandler($this));

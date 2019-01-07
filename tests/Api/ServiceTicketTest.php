@@ -31,7 +31,7 @@ class ServiceTicketTest extends ApiTestCase
 
         $this->assertTrue($this->client->hasServiceTicket());
         $this->assertEquals('5.0.0.0.675', $res['controllerVersion']);
-        $this->assertEquals('ST-84-ne0Ttad35SutWCRbNpMP-sct-rcs-ctr01', $res['serviceTicket']);
+        $this->assertEquals('ST-115-modLvQfCtWVc0WivdzC5-sct-rcs-ctr01', $res['serviceTicket']);
     }
 
     /**

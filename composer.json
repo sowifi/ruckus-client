@@ -6,9 +6,11 @@
     "require": {
         "php": ">=5.6",
         "ext-json": "*",
-        "guzzlehttp/guzzle": "^6.3"
+        "guzzlehttp/guzzle": "^6.3",
+        "vlucas/phpdotenv": "^3.0"
     },
     "require-dev": {
+        "allejo/php-vcr-sanitizer": "^0.0.1",
         "jakub-onderka/php-parallel-lint": "^1.0",
         "php-vcr/php-vcr": "^1.4",
         "php-vcr/phpunit-testlistener-vcr": "^3.2",
