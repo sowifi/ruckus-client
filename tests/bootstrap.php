@@ -4,7 +4,7 @@ VCR\VCR::configure()
     ->setCassettePath(__DIR__ . '/fixtures/vcr')
     ->enableLibraryHooks(['curl'])
     ->setStorage('json')
-    ->enableRequestMatchers(['method', 'url', 'host', 'query_string', 'body']);
+    ->enableRequestMatchers(['method', 'url', 'query_string', 'body']);
 
 // Sanitize sensitive data
 allejo\VCR\VCRCleaner::enable([
@@ -21,4 +21,8 @@ allejo\VCR\VCRCleaner::enable([
     }],
 ]);
 
-Dotenv\Dotenv::create(__DIR__ . '/../')->load();
+try {
+    Dotenv\Dotenv::create(__DIR__ . '/../')->load();
+} catch (\Dotenv\Exception\InvalidPathException $e) {
+    //
+}
