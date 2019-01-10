@@ -1,0 +1,74 @@
+[{
+    "request": {
+        "method": "POST",
+        "url": "https:\/\/192.168.3.167:8443\/wsg\/api\/public\/v7_0\/serviceTicket",
+        "headers": {
+            "Host": "192.168.3.167:8443",
+            "Expect": null,
+            "Accept-Encoding": null,
+            "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.10",
+            "Content-Type": "application\/json",
+            "Accept": null
+        },
+        "body": "{\"username\":\"admin\"}"
+    },
+    "response": {
+        "status": {
+            "http_version": "1.1",
+            "code": "200",
+            "message": ""
+        },
+        "headers": {
+            "Server": "nginx\/1.12.0",
+            "Date": "Thu, 10 Jan 2019 16:20:14 GMT",
+            "Content-Type": "text\/plain;charset=UTF-8",
+            "Transfer-Encoding": "chunked",
+            "Connection": "keep-alive",
+            "Set-Cookie": "JSESSIONID=F8C2752D9F387254BFF738C2F29C05F6; Path=\/wsg; HttpOnly",
+            "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+            "Pragma": "no-cache",
+            "Expires": "0",
+            "X-XSS-Protection": "1; mode=block",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Content-Type-Options": "nosniff",
+            "Vary": "Accept-Encoding"
+        },
+        "body": "{\"controllerVersion\":\"5.0.0.0.675\",\"serviceTicket\":\"ST-133-sJqGeYIDRtbIhzKqqSkk-sct-rcs-ctr01\"}"
+    }
+},{
+    "request": {
+        "method": "POST",
+        "url": "https:\/\/192.168.3.167:8443\/wsg\/api\/public\/v7_0\/aps?",
+        "headers": {
+            "Host": "192.168.3.167:8443",
+            "Expect": null,
+            "Accept-Encoding": null,
+            "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.10",
+            "Content-Type": "application\/json",
+            "Accept": null
+        },
+        "body": "{\"mac\":\"00:A0:C9:14:C8:28\",\"zoneId\":\"4757aaa9-aa3b-4acf-9731-8970049d9109\"}"
+    },
+    "response": {
+        "status": {
+            "http_version": "1.1",
+            "code": "201",
+            "message": ""
+        },
+        "headers": {
+            "Server": "nginx\/1.12.0",
+            "Date": "Thu, 10 Jan 2019 16:20:15 GMT",
+            "Content-Type": "text\/plain;charset=UTF-8",
+            "Transfer-Encoding": "chunked",
+            "Connection": "keep-alive",
+            "Set-Cookie": "JSESSIONID=48E9628860FA448E0453A3F04347E54E; Path=\/wsg; HttpOnly",
+            "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+            "Pragma": "no-cache",
+            "Expires": "0",
+            "X-XSS-Protection": "1; mode=block",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Content-Type-Options": "nosniff",
+            "Vary": "Accept-Encoding"
+        }
+    }
+}]
