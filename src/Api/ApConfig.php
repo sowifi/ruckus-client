@@ -8,6 +8,17 @@ namespace SoConnect\RuckusClient\Api;
 class ApConfig extends AbstractApi
 {
     /**
+     * Create a new access point.
+     *
+     * @param array $body
+     * @return array
+     */
+    public function create(array $body)
+    {
+        return $this->post('/aps', $body);
+    }
+
+    /**
      * Retrieve the list of APs that belong to a zone or a domain.
      * Todo: Rename to `list` once moved to PHP 7
      *

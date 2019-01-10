@@ -23,6 +23,19 @@ class ApConfigTest extends ApiTestCase
     }
 
     /**
+     * @vcr ap-config-create
+     */
+    public function testCreate()
+    {
+        $res = $this->apConfigApi->create([
+            'mac' => '00:A0:C9:14:C8:28',
+            'zoneId' => '4757aaa9-aa3b-4acf-9731-8970049d9109',
+        ]);
+
+        $this->assertEmpty($res);
+    }
+
+    /**
      * @vcr ap-config-list
      */
     public function testList()
