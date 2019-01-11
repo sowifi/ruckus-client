@@ -1,6 +1,8 @@
 version: 2
 jobs:
   build:
+    environment:
+      CC_TEST_REPORTER_ID: e8b3a2a2b561c1013cfc822cb10c99c9ce99c63da69de65df618afdc0a9056dc
     docker:
       - image: circleci/php:7.3
     steps:
@@ -8,9 +10,7 @@ jobs:
 
       - restore_cache:
           keys:
-            # "composer.lock" can be used if it is committed to the repo
-            - v1-dependencies-{{ checksum "composer.json" }}
-            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-{{ checksum "composer.lock" }}
             - v1-dependencies-
 
       - run: composer install -n --prefer-dist
@@ -24,7 +24,21 @@ jobs:
       - run: ./bin/parallel-lint --exclude vendor .
       - run: ./bin/phpcs src/ tests/ --standard=PSR2,PSR12 --report=summary -p
       - run: ./bin/phpstan analyse -l max src/ tests/
-      - run: ./bin/phpunit --log-junit ./reports/phpunit.xml --coverage-xml reports/coverage
+      - run:
+          name: Setup Code Climate test-reporter
+          command: |
+            # download test reporter as a static binary
+              curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+              chmod +x ./cc-test-reporter
+      - run:
+          name: Run tests
+          command: |
+            sudo docker-php-ext-enable xdebug
+            # notify Code Climate of a pending test report using `before-build`
+            ./cc-test-reporter before-build
+            sudo bin/phpunit --coverage-clover clover.xml --log-junit ./reports/phpunit.xml
+            # upload test report to Code Climate using `after-build`
+            ./cc-test-reporter after-build --coverage-input-type clover --exit-code $?
       - store_test_results:
           path: reports
       - store_artifacts:
