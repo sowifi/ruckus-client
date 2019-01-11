@@ -2,7 +2,7 @@
     "name": "soconnect/ruckus-client",
     "description": "Ruckus WLAN controller API client",
     "type": "project",
-    "license": "proprietary",
+    "license": "MIT",
     "require": {
         "php": ">=5.6",
         "ext-json": "*",
