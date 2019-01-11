@@ -1,7 +1,7 @@
 Ruckus Client
 ===============
 <p align="center">
-<a href="https://circleci.com/gh/sowifi/ruckus-client/tree/master"><img src="https://circleci.com/gh/sowifi/ruckus-client/tree/master.svg?style=svg&circle-token=e400150b5939e92f87bb25053d5d92caebfbe227" alt="Build Status"></a>
+<a href="https://circleci.com/gh/sowifi/ruckus-client/tree/master"><img src="https://circleci.com/gh/sowifi/ruckus-client/tree/master.svg?style=shield&circle-token=e400150b5939e92f87bb25053d5d92caebfbe227" alt="Build Status"></a>
 <a href="https://codeclimate.com/github/sowifi/ruckus-client/test_coverage"><img src="https://api.codeclimate.com/v1/badges/67337c88c5111928d14d/test_coverage" /></a>
 <a href="https://packagist.org/packages/soconnect/ruckus-client"><img src="https://poser.pugx.org/soconnect/ruckus-client/v/stable" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/soconnect/ruckus-client"><img src="https://poser.pugx.org/soconnect/ruckus-client/license" alt="License"></a>
