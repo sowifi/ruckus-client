@@ -4,7 +4,7 @@ jobs:
     environment:
       CC_TEST_REPORTER_ID: e8b3a2a2b561c1013cfc822cb10c99c9ce99c63da69de65df618afdc0a9056dc
     docker:
-      - image: circleci/php:7.3
+      - image: circleci/php:7.2
     steps:
       - checkout
 
@@ -36,10 +36,10 @@ jobs:
             sudo docker-php-ext-enable xdebug
             # notify Code Climate of a pending test report using `before-build`
             ./cc-test-reporter before-build
-            sudo bin/phpunit --coverage-clover clover.xml --log-junit ./reports/phpunit.xml
+            sudo bin/phpunit --coverage-clover clover.xml --log-junit ./artifacts/phpunit/phpunit.xml
             # upload test report to Code Climate using `after-build`
             ./cc-test-reporter after-build --coverage-input-type clover --exit-code $?
       - store_test_results:
-          path: reports
+          path: artifacts/phpunit
       - store_artifacts:
-          path: reports
+          path: artifacts/phpunit
