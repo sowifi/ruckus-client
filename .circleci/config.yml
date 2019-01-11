@@ -26,6 +26,6 @@ jobs:
       - run: ./bin/phpstan analyse -l max src/ tests/
       - run: ./bin/phpunit --log-junit ./reports/phpunit.xml --coverage-xml reports/coverage
       - store_test_results:
-          path: tests/_output
+          path: reports
       - store_artifacts:
-          path: tests/_output
+          path: reports
