@@ -21,20 +21,24 @@ jobs:
           paths:
             - vendor
 
-      # Run tests and reporting
+      - run: ./bin/parallel-lint --exclude vendor .
+      - run: ./bin/phpcs src/ tests/ --standard=PSR2,PSR12 --report=summary -p
+      - run: ./bin/phpstan analyse -l max src/ tests/
       - run:
           name: Setup Code Climate test-reporter
           command: |
             # download test reporter as a static binary
               curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
               chmod +x ./cc-test-reporter
-      - run: ./bin/parallel-lint --exclude vendor .
-      - run: ./bin/phpcs src/ tests/ --standard=PSR2,PSR12 --report=summary -p
-      - run: ./bin/phpstan analyse -l max src/ tests/
-      - run: ./cc-test-reporter before-build ./bin/phpunit --log-junit ./reports/phpunit.xml --coverage-clover clover.xml
       - run:
           name: Run tests
-          command: ./cc-test-reporter after-build --coverage-input-type clover --exit-code $?
+          command: |
+            sudo docker-php-ext-enable xdebug
+            # notify Code Climate of a pending test report using `before-build`
+            ./cc-test-reporter before-build
+            sudo bin/phpunit --coverage-clover clover.xml --log-junit ./reports/phpunit.xml
+            # upload test report to Code Climate using `after-build`
+            ./cc-test-reporter after-build --coverage-input-type clover --exit-code $?
       - store_test_results:
           path: reports
       - store_artifacts:
