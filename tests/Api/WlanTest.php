@@ -23,6 +23,26 @@ class WlanTest extends ApiTestCase
     }
 
     /**
+     * @vcr wlan-create-standard-open
+     */
+    public function testCreateStandardOpen()
+    {
+        $res = $this->wlanApi->createStandardOpen('4757aaa9-aa3b-4acf-9731-8970049d9109', [
+            'name' => 'Test Name Unit Open',
+            'description' => 'Test Description',
+            'ssid' => 'test-wlan-1234',
+            'encryption' => [
+                'method' => 'WPA2',
+                'algorithm' => 'AES',
+                'passphrase' => 'password',
+                'mfp' => 'disabled',
+            ]
+        ]);
+
+        $this->assertIsNumeric($res['id']);
+    }
+
+    /**
      * @vcr wlan-create-standard8021x
      */
     public function testCreateStandard8021x()
@@ -32,7 +52,7 @@ class WlanTest extends ApiTestCase
             'description' => 'Test Description',
             'ssid' => 'test-wlan-1234',
             'authServiceOrProfile' => [
-                "name" => "soconnect-venue-1234-radius-auth"
+                'name' => 'soconnect-venue-1234-radius-auth'
             ]
         ]);
 
@@ -49,7 +69,7 @@ class WlanTest extends ApiTestCase
             'description' => 'Test Description',
             'ssid' => 'test-wlan-1234',
             'authServiceOrProfile' => [
-                "name" => "soconnect-venue-1234-radius-auth"
+                'name' => 'soconnect-venue-1234-radius-auth'
             ],
             'portalServiceProfile' => [
                 'name' => 'soconnect-captive-portal',

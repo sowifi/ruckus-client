@@ -8,6 +8,19 @@ namespace SoConnect\RuckusClient\Api;
 class Wlan extends AbstractApi
 {
     /**
+     * Create a new standard, open and non-tunneled basic WLAN.
+     *
+     * @param string $zoneId
+     * @param array $body
+     *
+     * @return array
+     */
+    public function createStandardOpen($zoneId, array $body)
+    {
+        return $this->post('/rkszones/' . $zoneId . '/wlans', $body);
+    }
+
+    /**
      * Create a new standard, 802.1X and non-tunneled WLAN.
      *
      * @param string $zoneId
