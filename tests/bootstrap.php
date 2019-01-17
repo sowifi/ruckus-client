@@ -8,17 +8,24 @@ VCR\VCR::configure()
 
 // Sanitize sensitive data
 allejo\VCR\VCRCleaner::enable([
-    'ignoreUrlParameters' => [
-        'serviceTicket',
+    'request' => [
+        'ignoreHostname' => true,
+        'ignoreQueryFields' => ['serviceTicket'],
+        'bodyScrubbers' => [function ($body) {
+            if (!$body) {
+                return $body;
+            }
+
+            $parsedBody = json_decode($body, true);
+            unset($parsedBody['password']);
+            unset($parsedBody['serviceTicket']);
+
+            return json_encode($parsedBody);
+        }],
     ],
-    'bodyScrubbers' => [function ($body) {
-        $parsedBody = json_decode($body, true);
-
-        unset($parsedBody['password']);
-        unset($parsedBody['serviceTicket']);
-
-        return json_encode($parsedBody);
-    }],
+    'response' => [
+        'ignoreHeaders' => ['Set-Cookie'],
+    ]
 ]);
 
 try {

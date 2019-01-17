@@ -1,9 +1,9 @@
 [{
     "request": {
         "method": "POST",
-        "url": "https:\/\/192.168.3.167:8443\/wsg\/api\/public\/v7_0\/serviceTicket",
+        "url": "https:\/\/[]:8443\/wsg\/api\/public\/v7_0\/serviceTicket",
         "headers": {
-            "Host": "192.168.3.167:8443",
+            "Host": null,
             "Expect": null,
             "Accept-Encoding": null,
             "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.10",
@@ -20,11 +20,11 @@
         },
         "headers": {
             "Server": "nginx\/1.12.0",
-            "Date": "Mon, 07 Jan 2019 09:11:54 GMT",
+            "Date": "Thu, 17 Jan 2019 09:45:40 GMT",
             "Content-Type": "text\/plain;charset=UTF-8",
             "Transfer-Encoding": "chunked",
             "Connection": "keep-alive",
-            "Set-Cookie": "JSESSIONID=7A938B6DE9142656C948F41DEB309B07; Path=\/wsg; HttpOnly",
+            "Set-Cookie": null,
             "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
             "Pragma": "no-cache",
             "Expires": "0",
@@ -33,19 +33,18 @@
             "X-Content-Type-Options": "nosniff",
             "Vary": "Accept-Encoding"
         },
-        "body": "{\"controllerVersion\":\"5.0.0.0.675\",\"serviceTicket\":\"ST-110-fguDj1Un4hXOdAHqFjlz-sct-rcs-ctr01\"}"
+        "body": "{\"controllerVersion\":\"5.1.0.0.496\",\"serviceTicket\":\"ST-94-rcMDkB6ohigNIiiN6aNd-sct-rcs-ctr01\"}"
     }
 },{
     "request": {
         "method": "GET",
-        "url": "https:\/\/192.168.3.167:8443\/wsg\/api\/public\/v7_0\/aps?",
+        "url": "https:\/\/[]:8443\/wsg\/api\/public\/v7_0\/aps?",
         "headers": {
-            "Host": "192.168.3.167:8443",
+            "Host": "[]:8443",
             "Accept-Encoding": null,
             "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.10",
             "Accept": null
-        },
-        "body": "null"
+        }
     },
     "response": {
         "status": {
@@ -55,11 +54,11 @@
         },
         "headers": {
             "Server": "nginx\/1.12.0",
-            "Date": "Mon, 07 Jan 2019 09:11:54 GMT",
+            "Date": "Thu, 17 Jan 2019 09:45:40 GMT",
             "Content-Type": "text\/plain;charset=UTF-8",
             "Transfer-Encoding": "chunked",
             "Connection": "keep-alive",
-            "Set-Cookie": "JSESSIONID=B8A70A0B58AF48128A6BF430CDF41270; Path=\/wsg; HttpOnly",
+            "Set-Cookie": null,
             "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
             "Pragma": "no-cache",
             "Expires": "0",
@@ -68,6 +67,6 @@
             "X-Content-Type-Options": "nosniff",
             "Vary": "Accept-Encoding"
         },
-        "body": "{\"totalCount\":1,\"hasMore\":false,\"firstIndex\":0,\"list\":[{\"mac\":\"F8:E7:1E:0E:EA:60\",\"zoneId\":\"16adc469-8a48-47b8-b431-7164ceb0f4eb\",\"apGroupId\":\"4896cd08-b9b8-44c3-b546-fbaef46340b1\",\"serial\":\"911609000515\",\"name\":\"RuckusAP\"}]}"
+        "body": "{\"totalCount\":9,\"hasMore\":false,\"firstIndex\":0,\"list\":[{\"mac\":\"00:A0:C9:14:C8:28\",\"zoneId\":\"b4187899-38ae-4ace-8e40-0bc444455156\",\"apGroupId\":\"b3cbe7c0-ad5b-4a98-b1f8-f34cc1722f22\",\"serial\":null,\"name\":\"\"},{\"mac\":\"00:A0:C9:14:C8:29\",\"zoneId\":\"4757aaa9-aa3b-4acf-9731-8970049d9109\",\"apGroupId\":\"f8717e07-e0c4-41d2-a929-fd0ac9936563\",\"serial\":null,\"name\":\"\"},{\"mac\":\"12:CE:96:DE:D6:9E\",\"zoneId\":\"4757aaa9-aa3b-4acf-9731-8970049d9109\",\"apGroupId\":\"f8717e07-e0c4-41d2-a929-fd0ac9936563\",\"serial\":null,\"name\":\"\"},{\"mac\":\"18:4B:0D:31:6B:B0\",\"zoneId\":\"4757aaa9-aa3b-4acf-9731-8970049d9109\",\"apGroupId\":\"f8717e07-e0c4-41d2-a929-fd0ac9936563\",\"serial\":\"371839001576\",\"name\":\"RuckusAP\"},{\"mac\":\"26:D0:FF:50:03:DA\",\"zoneId\":\"4757aaa9-aa3b-4acf-9731-8970049d9109\",\"apGroupId\":\"f8717e07-e0c4-41d2-a929-fd0ac9936563\",\"serial\":null,\"name\":\"\"},{\"mac\":\"4B:0F:C4:65:52:F6\",\"zoneId\":\"4757aaa9-aa3b-4acf-9731-8970049d9109\",\"apGroupId\":\"f8717e07-e0c4-41d2-a929-fd0ac9936563\",\"serial\":null,\"name\":\"\"},{\"mac\":\"60:A4:27:D3:32:54\",\"zoneId\":\"4757aaa9-aa3b-4acf-9731-8970049d9109\",\"apGroupId\":\"f8717e07-e0c4-41d2-a929-fd0ac9936563\",\"serial\":null,\"name\":\"\"},{\"mac\":\"AD:78:C9:55:88:F7\",\"zoneId\":\"4757aaa9-aa3b-4acf-9731-8970049d9109\",\"apGroupId\":\"f8717e07-e0c4-41d2-a929-fd0ac9936563\",\"serial\":null,\"name\":\"\"},{\"mac\":\"F8:E7:1E:0E:EA:60\",\"zoneId\":\"16adc469-8a48-47b8-b431-7164ceb0f4eb\",\"apGroupId\":\"4896cd08-b9b8-44c3-b546-fbaef46340b1\",\"serial\":\"911609000515\",\"name\":\"RuckusAP\"}]}"
     }
 }]

@@ -1,9 +1,9 @@
 [{
     "request": {
         "method": "POST",
-        "url": "https:\/\/192.168.3.167:8443\/wsg\/api\/public\/v7_0\/serviceTicket",
+        "url": "https:\/\/[]:8443\/wsg\/api\/public\/v7_0\/serviceTicket",
         "headers": {
-            "Host": "192.168.3.167:8443",
+            "Host": null,
             "Expect": null,
             "Accept-Encoding": null,
             "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.10",
@@ -20,11 +20,11 @@
         },
         "headers": {
             "Server": "nginx\/1.12.0",
-            "Date": "Mon, 07 Jan 2019 09:11:55 GMT",
+            "Date": "Thu, 17 Jan 2019 09:45:41 GMT",
             "Content-Type": "text\/plain;charset=UTF-8",
             "Transfer-Encoding": "chunked",
             "Connection": "keep-alive",
-            "Set-Cookie": "JSESSIONID=05FFA3895D37E9F411A7B3BBA5E19850; Path=\/wsg; HttpOnly",
+            "Set-Cookie": null,
             "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
             "Pragma": "no-cache",
             "Expires": "0",
@@ -33,19 +33,18 @@
             "X-Content-Type-Options": "nosniff",
             "Vary": "Accept-Encoding"
         },
-        "body": "{\"controllerVersion\":\"5.0.0.0.675\",\"serviceTicket\":\"ST-112-iimwhC0a0ImaMdFvPBf6-sct-rcs-ctr01\"}"
+        "body": "{\"controllerVersion\":\"5.1.0.0.496\",\"serviceTicket\":\"ST-96-cSa0r9ZCBfP2eUO0MsDv-sct-rcs-ctr01\"}"
     }
 },{
     "request": {
         "method": "GET",
-        "url": "https:\/\/192.168.3.167:8443\/wsg\/api\/public\/v7_0\/aps\/F8:E7:1E:0E:EA:60\/operational\/summary?",
+        "url": "https:\/\/[]:8443\/wsg\/api\/public\/v7_0\/aps\/F8:E7:1E:0E:EA:60\/operational\/summary?",
         "headers": {
-            "Host": "192.168.3.167:8443",
+            "Host": "[]:8443",
             "Accept-Encoding": null,
             "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.10",
             "Accept": null
-        },
-        "body": "null"
+        }
     },
     "response": {
         "status": {
@@ -55,11 +54,11 @@
         },
         "headers": {
             "Server": "nginx\/1.12.0",
-            "Date": "Mon, 07 Jan 2019 09:11:55 GMT",
+            "Date": "Thu, 17 Jan 2019 09:45:41 GMT",
             "Content-Type": "text\/plain;charset=UTF-8",
             "Transfer-Encoding": "chunked",
             "Connection": "keep-alive",
-            "Set-Cookie": "JSESSIONID=B66BBCED27BF9BB88B790E0EA4ED3B16; Path=\/wsg; HttpOnly",
+            "Set-Cookie": null,
             "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
             "Pragma": "no-cache",
             "Expires": "0",
@@ -68,6 +67,6 @@
             "X-Content-Type-Options": "nosniff",
             "Vary": "Accept-Encoding"
         },
-        "body": "{\"mac\":\"F8:E7:1E:0E:EA:60\",\"zoneId\":\"16adc469-8a48-47b8-b431-7164ceb0f4eb\",\"apGroupId\":\"4896cd08-b9b8-44c3-b546-fbaef46340b1\",\"serial\":\"911609000515\",\"model\":\"R310\",\"name\":\"RuckusAP\",\"description\":null,\"latitude\":null,\"longitude\":null,\"location\":\"\",\"administrativeState\":\"Unlocked\",\"version\":\"5.0.0.0.753\",\"countryCode\":\"NL\",\"cpId\":\"3200c388-871e-4d1e-bed0-0f0bf3732385\",\"dpId\":null,\"wifi24Channel\":\"4\",\"wifi50Channel\":\"36\",\"meshRole\":null,\"meshHop\":null,\"ip\":\"192.168.3.88\",\"ipType\":\"Dynamic\",\"externalIp\":\"192.168.3.88\",\"externalPort\":52125,\"configState\":\"newConfig\",\"connectionState\":\"Disconnect\",\"registrationState\":\"Approved\",\"provisionMethod\":\"Discovered\",\"provisionStage\":null,\"isCriticalAP\":false,\"approvedTime\":1541165011900,\"lastSeenTime\":1542018616633,\"uptime\":-1,\"clientCount\":0,\"managementVlan\":1}"
+        "body": "{\"mac\":\"F8:E7:1E:0E:EA:60\",\"zoneId\":\"16adc469-8a48-47b8-b431-7164ceb0f4eb\",\"apGroupId\":\"4896cd08-b9b8-44c3-b546-fbaef46340b1\",\"serial\":\"911609000515\",\"model\":\"R310\",\"name\":\"RuckusAP\",\"description\":null,\"latitude\":null,\"longitude\":null,\"location\":\"\",\"administrativeState\":\"Unlocked\",\"version\":\"5.0.0.0.753\",\"countryCode\":\"NL\",\"cpId\":\"3200c388-871e-4d1e-bed0-0f0bf3732385\",\"dpId\":null,\"wifi24Channel\":\"4\",\"wifi50Channel\":\"36\",\"meshRole\":null,\"meshHop\":null,\"ip\":\"192.168.3.88\",\"ipType\":null,\"externalIp\":\"192.168.3.88\",\"externalPort\":52125,\"configState\":\"newConfig\",\"connectionState\":\"Disconnect\",\"registrationState\":\"Approved\",\"provisionMethod\":\"Discovered\",\"provisionStage\":null,\"isCriticalAP\":false,\"approvedTime\":1541165011900,\"lastSeenTime\":1542018616633,\"uptime\":-1,\"clientCount\":0,\"managementVlan\":null}"
     }
 }]

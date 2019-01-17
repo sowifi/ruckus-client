@@ -1,9 +1,9 @@
 [{
     "request": {
         "method": "POST",
-        "url": "https:\/\/192.168.3.167:8443\/wsg\/api\/public\/v7_0\/serviceTicket",
+        "url": "https:\/\/[]:8443\/wsg\/api\/public\/v7_0\/serviceTicket",
         "headers": {
-            "Host": "192.168.3.167:8443",
+            "Host": null,
             "Expect": null,
             "Accept-Encoding": null,
             "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.10",
@@ -20,11 +20,11 @@
         },
         "headers": {
             "Server": "nginx\/1.12.0",
-            "Date": "Mon, 07 Jan 2019 09:11:57 GMT",
+            "Date": "Thu, 17 Jan 2019 09:45:41 GMT",
             "Content-Type": "text\/plain;charset=UTF-8",
             "Transfer-Encoding": "chunked",
             "Connection": "keep-alive",
-            "Set-Cookie": "JSESSIONID=28B926292DE0EA1BA38D9F3EFB98E80D; Path=\/wsg; HttpOnly",
+            "Set-Cookie": null,
             "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
             "Pragma": "no-cache",
             "Expires": "0",
@@ -33,6 +33,6 @@
             "X-Content-Type-Options": "nosniff",
             "Vary": "Accept-Encoding"
         },
-        "body": "{\"controllerVersion\":\"5.0.0.0.675\",\"serviceTicket\":\"ST-115-modLvQfCtWVc0WivdzC5-sct-rcs-ctr01\"}"
+        "body": "{\"controllerVersion\":\"5.1.0.0.496\",\"serviceTicket\":\"ST-99-Wa9gcyfVmbvlj0N0LHcI-sct-rcs-ctr01\"}"
     }
 }]

@@ -1,9 +1,9 @@
 [{
     "request": {
         "method": "POST",
-        "url": "https:\/\/192.168.3.167:8443\/wsg\/api\/public\/v7_0\/serviceTicket",
+        "url": "https:\/\/[]:8443\/wsg\/api\/public\/v7_0\/serviceTicket",
         "headers": {
-            "Host": "192.168.3.167:8443",
+            "Host": null,
             "Expect": null,
             "Accept-Encoding": null,
             "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.10",
@@ -20,11 +20,11 @@
         },
         "headers": {
             "Server": "nginx\/1.12.0",
-            "Date": "Mon, 07 Jan 2019 09:11:56 GMT",
+            "Date": "Thu, 17 Jan 2019 09:58:45 GMT",
             "Content-Type": "text\/plain;charset=UTF-8",
             "Transfer-Encoding": "chunked",
             "Connection": "keep-alive",
-            "Set-Cookie": "JSESSIONID=28EBD775CAB26350FAC3A22260E74ED2; Path=\/wsg; HttpOnly",
+            "Set-Cookie": null,
             "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
             "Pragma": "no-cache",
             "Expires": "0",
@@ -33,53 +33,18 @@
             "X-Content-Type-Options": "nosniff",
             "Vary": "Accept-Encoding"
         },
-        "body": "{\"controllerVersion\":\"5.0.0.0.675\",\"serviceTicket\":\"ST-114-paCksHrsdE1pChFy5Oea-sct-rcs-ctr01\"}"
+        "body": "{\"controllerVersion\":\"5.1.0.0.496\",\"serviceTicket\":\"ST-109-kcM0QwDNrrId2O7O7c0F-sct-rcs-ctr01\"}"
     }
 },{
     "request": {
         "method": "DELETE",
-        "url": "https:\/\/192.168.3.167:8443\/wsg\/api\/public\/v7_0\/rkszones\/9223c6fe-08fb-481b-b052-5b75604ef172?",
+        "url": "https:\/\/[]:8443\/wsg\/api\/public\/v7_0\/rkszones\/d91149be-1e54-4f48-b670-20536538b3f8?",
         "headers": {
-            "Host": "192.168.3.167:8443",
+            "Host": "[]:8443",
             "Accept-Encoding": null,
             "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.10",
             "Accept": null
-        },
-        "body": "null"
-    },
-    "response": {
-        "status": {
-            "http_version": "1.1",
-            "code": "403",
-            "message": ""
-        },
-        "headers": {
-            "Server": "nginx\/1.12.0",
-            "Date": "Mon, 07 Jan 2019 09:11:57 GMT",
-            "Content-Type": "application\/json;charset=UTF-8",
-            "Transfer-Encoding": "chunked",
-            "Connection": "keep-alive",
-            "Set-Cookie": "JSESSIONID=125B9193F336813384DBDFB4135B2A3A; Path=\/wsg; HttpOnly",
-            "Cache-Control": "no-store",
-            "X-XSS-Protection": "1; mode=block",
-            "X-Frame-Options": "SAMEORIGIN",
-            "X-Content-Type-Options": "nosniff",
-            "Content-Language": "en-US",
-            "Vary": "Accept-Encoding"
-        },
-        "body": "{\"message\":\"Permission denied (Access is denied)\",\"errorCode\":211,\"errorType\":\"Lack of admin privilege\"}"
-    }
-},{
-    "request": {
-        "method": "DELETE",
-        "url": "https:\/\/192.168.3.167:8443\/wsg\/api\/public\/v7_0\/rkszones\/d4648e7d-def0-4115-b702-c38065ee93b1?",
-        "headers": {
-            "Host": "192.168.3.167:8443",
-            "Accept-Encoding": null,
-            "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.10",
-            "Accept": null
-        },
-        "body": "null"
+        }
     },
     "response": {
         "status": {
@@ -89,10 +54,10 @@
         },
         "headers": {
             "Server": "nginx\/1.12.0",
-            "Date": "Mon, 07 Jan 2019 09:19:17 GMT",
+            "Date": "Thu, 17 Jan 2019 09:58:46 GMT",
             "Content-Type": "text\/plain;charset=UTF-8",
             "Connection": "keep-alive",
-            "Set-Cookie": "JSESSIONID=5BCC9EF8B1CC3822AA9F9B078456DE31; Path=\/wsg; HttpOnly",
+            "Set-Cookie": null,
             "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
             "Pragma": "no-cache",
             "Expires": "0",

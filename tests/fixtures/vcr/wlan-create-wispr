@@ -1,9 +1,9 @@
 [{
     "request": {
         "method": "POST",
-        "url": "https:\/\/192.168.3.167:8443\/wsg\/api\/public\/v7_0\/serviceTicket",
+        "url": "https:\/\/[]:8443\/wsg\/api\/public\/v7_0\/serviceTicket",
         "headers": {
-            "Host": "192.168.3.167:8443",
+            "Host": null,
             "Expect": null,
             "Accept-Encoding": null,
             "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.10",
@@ -20,11 +20,11 @@
         },
         "headers": {
             "Server": "nginx\/1.12.0",
-            "Date": "Mon, 07 Jan 2019 09:21:53 GMT",
+            "Date": "Thu, 17 Jan 2019 09:56:17 GMT",
             "Content-Type": "text\/plain;charset=UTF-8",
             "Transfer-Encoding": "chunked",
             "Connection": "keep-alive",
-            "Set-Cookie": "JSESSIONID=FEF2FBE35EF7DA60E1768C3ED98FB013; Path=\/wsg; HttpOnly",
+            "Set-Cookie": null,
             "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
             "Pragma": "no-cache",
             "Expires": "0",
@@ -33,14 +33,14 @@
             "X-Content-Type-Options": "nosniff",
             "Vary": "Accept-Encoding"
         },
-        "body": "{\"controllerVersion\":\"5.0.0.0.675\",\"serviceTicket\":\"ST-126-hntrm2TfNGhNJ1VIddZ6-sct-rcs-ctr01\"}"
+        "body": "{\"controllerVersion\":\"5.1.0.0.496\",\"serviceTicket\":\"ST-107-gbY3MkqLAziKrKqAiirM-sct-rcs-ctr01\"}"
     }
 },{
     "request": {
         "method": "POST",
-        "url": "https:\/\/192.168.3.167:8443\/wsg\/api\/public\/v7_0\/rkszones\/4757aaa9-aa3b-4acf-9731-8970049d9109\/wlans\/wispr?",
+        "url": "https:\/\/[]:8443\/wsg\/api\/public\/v7_0\/rkszones\/4757aaa9-aa3b-4acf-9731-8970049d9109\/wlans\/wispr?",
         "headers": {
-            "Host": "192.168.3.167:8443",
+            "Host": "[]:8443",
             "Expect": null,
             "Accept-Encoding": null,
             "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.10",
@@ -57,11 +57,11 @@
         },
         "headers": {
             "Server": "nginx\/1.12.0",
-            "Date": "Mon, 07 Jan 2019 09:21:54 GMT",
+            "Date": "Thu, 17 Jan 2019 09:56:18 GMT",
             "Content-Type": "text\/plain;charset=UTF-8",
             "Transfer-Encoding": "chunked",
             "Connection": "keep-alive",
-            "Set-Cookie": "JSESSIONID=7D931753EB2AE12A8520A4BB520C3309; Path=\/wsg; HttpOnly",
+            "Set-Cookie": null,
             "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
             "Pragma": "no-cache",
             "Expires": "0",
@@ -70,6 +70,6 @@
             "X-Content-Type-Options": "nosniff",
             "Vary": "Accept-Encoding"
         },
-        "body": "{\"id\":\"39\"}"
+        "body": "{\"id\":\"53\"}"
     }
 }]

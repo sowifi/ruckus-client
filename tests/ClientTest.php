@@ -20,7 +20,7 @@ class ClientTest extends ApiTestCase
         $this->client->serviceTicket()->logon();
 
         $this->assertTrue($this->client->hasServiceTicket());
-        $this->assertEquals('ST-115-modLvQfCtWVc0WivdzC5-sct-rcs-ctr01', $this->client->getServiceTicket());
+        $this->assertEquals('ST-99-Wa9gcyfVmbvlj0N0LHcI-sct-rcs-ctr01', $this->client->getServiceTicket());
 
         $newTicket = 'someAnotherTicket';
         $this->client->setServiceTicket($newTicket);
