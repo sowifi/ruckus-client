@@ -34,7 +34,7 @@ class ApZoneTest extends ApiTestCase
             'login' => ['apLoginName' => 'some-name', 'apLoginPassword' => 'Pass123!'],
         ]);
 
-        $this->assertEquals('d4648e7d-def0-4115-b702-c38065ee93b1', $res['id']);
+        $this->assertEquals('9eaf6f09-6f3f-45cf-9676-2f7ac2eba4c2', $res['id']);
     }
 
     /**
@@ -42,7 +42,7 @@ class ApZoneTest extends ApiTestCase
      */
     public function testDeleteZone()
     {
-        $res = $this->apZoneApi->deleteZone('d4648e7d-def0-4115-b702-c38065ee93b1');
+        $res = $this->apZoneApi->deleteZone('d91149be-1e54-4f48-b670-20536538b3f8');
 
         $this->assertEmpty($res);
     }

@@ -28,7 +28,7 @@ class ApConfigTest extends ApiTestCase
     public function testCreate()
     {
         $res = $this->apConfigApi->create([
-            'mac' => '00:A0:C9:14:C8:28',
+            'mac' => '00:A0:C9:14:C8:29',
             'zoneId' => '4757aaa9-aa3b-4acf-9731-8970049d9109',
         ]);
 
@@ -42,8 +42,8 @@ class ApConfigTest extends ApiTestCase
     {
         $res = $this->apConfigApi->listAll();
 
-        $this->assertEquals(1, $res['totalCount']);
-        $this->assertEquals('F8:E7:1E:0E:EA:60', $res['list'][0]['mac']);
+        $this->assertIsNumeric($res['totalCount']);
+        $this->assertEquals('00:A0:C9:14:C8:28', $res['list'][0]['mac']);
     }
 
     /**
