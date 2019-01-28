@@ -17,6 +17,7 @@ use SoConnect\RuckusClient\Handler\ServiceTicketHandler;
  * @method Api\ApConfig apConfig()
  * @method Api\ApOperational apOperational()
  * @method Api\Wlan wlan()
+ * @method Api\HotspotService hotspotService()
  */
 class Client
 {
@@ -138,6 +139,8 @@ class Client
                 return new Api\ApOperational($this);
             case 'wlan':
                 return new Api\Wlan($this);
+            case 'hotspotService':
+                return new Api\HotspotService($this);
             default:
                 throw new \InvalidArgumentException(sprintf('Undefined api instance called: "%s"', $name));
         }

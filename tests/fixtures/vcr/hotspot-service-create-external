@@ -1,0 +1,75 @@
+[{
+    "request": {
+        "method": "POST",
+        "url": "https:\/\/[]:8443\/wsg\/api\/public\/v7_0\/serviceTicket",
+        "headers": {
+            "Host": null,
+            "Expect": null,
+            "Accept-Encoding": null,
+            "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.10",
+            "Content-Type": "application\/json",
+            "Accept": null
+        },
+        "body": "{\"username\":\"admin\"}"
+    },
+    "response": {
+        "status": {
+            "http_version": "1.1",
+            "code": "200",
+            "message": ""
+        },
+        "headers": {
+            "Server": "nginx\/1.12.0",
+            "Date": "Mon, 28 Jan 2019 14:04:57 GMT",
+            "Content-Type": "text\/plain;charset=UTF-8",
+            "Transfer-Encoding": "chunked",
+            "Connection": "keep-alive",
+            "Set-Cookie": null,
+            "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+            "Pragma": "no-cache",
+            "Expires": "0",
+            "X-XSS-Protection": "1; mode=block",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Content-Type-Options": "nosniff",
+            "Vary": "Accept-Encoding"
+        },
+        "body": "{\"controllerVersion\":\"5.1.0.0.496\",\"serviceTicket\":\"ST-13-F70bwN2qs9GsdHOnyzQG-sct-test-001\"}"
+    }
+},{
+    "request": {
+        "method": "POST",
+        "url": "https:\/\/[]:8443\/wsg\/api\/public\/v7_0\/rkszones\/4757aaa9-aa3b-4acf-9731-8970049d9109\/portals\/hotspot\/external?",
+        "headers": {
+            "Host": "[]:8443",
+            "Expect": null,
+            "Accept-Encoding": null,
+            "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.10",
+            "Content-Type": "application\/json",
+            "Accept": null
+        },
+        "body": "{\"name\":\"soconnect-captive-portal-unit\",\"smartClientSupport\":\"Enabled\",\"portalUrl\":\"https:\\\/\\\/login.internetaccess.io\\\/partner\\\/ruckusvsz?location_id=49857\",\"redirect\":{\"url\":\"https:\\\/\\\/login.internetaccess.io\\\/portal\\\/index\\\/post-login-redirect\"},\"walledGardens\":[\"*.akamaihd.net\",\"*.facebook.net\"],\"macAddressFormat\":1}"
+    },
+    "response": {
+        "status": {
+            "http_version": "1.1",
+            "code": "201",
+            "message": ""
+        },
+        "headers": {
+            "Server": "nginx\/1.12.0",
+            "Date": "Mon, 28 Jan 2019 14:04:57 GMT",
+            "Content-Type": "text\/plain;charset=UTF-8",
+            "Transfer-Encoding": "chunked",
+            "Connection": "keep-alive",
+            "Set-Cookie": null,
+            "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+            "Pragma": "no-cache",
+            "Expires": "0",
+            "X-XSS-Protection": "1; mode=block",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Content-Type-Options": "nosniff",
+            "Vary": "Accept-Encoding"
+        },
+        "body": "{\"id\":\"621ac077-a1f7-437c-b2c6-d16f98e780c2\"}"
+    }
+}]
