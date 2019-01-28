@@ -47,6 +47,19 @@ class Wlan extends AbstractApi
     }
 
     /**
+     * Create new hotspot (WISPr) WLAN with MAC bypass WLAN.
+     *
+     * @param string $zoneId
+     * @param array $body
+     *
+     * @return array
+     */
+    public function createWisprMac($zoneId, array $body)
+    {
+        return $this->post('/rkszones/' . $zoneId . '/wlans/wisprmac', $body);
+    }
+
+    /**
      * Modify the basic information of a WLAN.
      *
      * @param string $zoneId
