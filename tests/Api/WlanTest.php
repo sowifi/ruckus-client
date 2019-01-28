@@ -80,6 +80,29 @@ class WlanTest extends ApiTestCase
     }
 
     /**
+     * @vcr wlan-create-wisprmac
+     */
+    public function testCreateWisprMac()
+    {
+        $res = $this->wlanApi->createWisprMac('4757aaa9-aa3b-4acf-9731-8970049d9109', [
+            'name' => 'Test Name Wispr MAC bypass Unit',
+            'description' => 'Test Description',
+            'ssid' => 'test-wlan-mac-1234',
+            'authServiceOrProfile' => [
+                'name' => 'soconnect-venue-1234-radius-auth'
+            ],
+            'portalServiceProfile' => [
+                'name' => 'soconnect-captive-portal',
+            ],
+            'macAuth' => [
+                'macAuthMacFormat' => '802.1X',
+            ],
+        ]);
+
+        $this->assertIsNumeric($res['id']);
+    }
+
+    /**
      * @vcr wlan-modify
      */
     public function testModify()
