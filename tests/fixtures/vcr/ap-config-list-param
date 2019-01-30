@@ -1,0 +1,72 @@
+[{
+    "request": {
+        "method": "POST",
+        "url": "https:\/\/[]:8443\/wsg\/api\/public\/v7_0\/serviceTicket",
+        "headers": {
+            "Host": null,
+            "Expect": null,
+            "Accept-Encoding": null,
+            "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.10",
+            "Content-Type": "application\/json",
+            "Accept": null
+        },
+        "body": "{\"username\":\"admin\"}"
+    },
+    "response": {
+        "status": {
+            "http_version": "1.1",
+            "code": "200",
+            "message": ""
+        },
+        "headers": {
+            "Server": "nginx\/1.12.0",
+            "Date": "Wed, 30 Jan 2019 09:01:11 GMT",
+            "Content-Type": "text\/plain;charset=UTF-8",
+            "Transfer-Encoding": "chunked",
+            "Connection": "keep-alive",
+            "Set-Cookie": null,
+            "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+            "Pragma": "no-cache",
+            "Expires": "0",
+            "X-XSS-Protection": "1; mode=block",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Content-Type-Options": "nosniff",
+            "Vary": "Accept-Encoding"
+        },
+        "body": "{\"controllerVersion\":\"5.1.0.0.496\",\"serviceTicket\":\"ST-44-eK4HbdcJXBAeRJ9EyRPL-sct-test-001\"}"
+    }
+},{
+    "request": {
+        "method": "GET",
+        "url": "https:\/\/[]:8443\/wsg\/api\/public\/v7_0\/aps?zoneId=169d08ce-7434-4a38-8fac-0d43e4b625a8",
+        "headers": {
+            "Host": "[]:8443",
+            "Accept-Encoding": null,
+            "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.10",
+            "Accept": null
+        }
+    },
+    "response": {
+        "status": {
+            "http_version": "1.1",
+            "code": "200",
+            "message": ""
+        },
+        "headers": {
+            "Server": "nginx\/1.12.0",
+            "Date": "Wed, 30 Jan 2019 09:01:11 GMT",
+            "Content-Type": "text\/plain;charset=UTF-8",
+            "Transfer-Encoding": "chunked",
+            "Connection": "keep-alive",
+            "Set-Cookie": null,
+            "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+            "Pragma": "no-cache",
+            "Expires": "0",
+            "X-XSS-Protection": "1; mode=block",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Content-Type-Options": "nosniff",
+            "Vary": "Accept-Encoding"
+        },
+        "body": "{\"totalCount\":1,\"hasMore\":false,\"firstIndex\":0,\"list\":[{\"mac\":\"00:A0:C9:14:C8:39\",\"zoneId\":\"169d08ce-7434-4a38-8fac-0d43e4b625a8\",\"apGroupId\":\"7f5e098e-ed6d-43b8-81a0-f686e2f0a7ee\",\"serial\":null,\"name\":\"\"}]}"
+    }
+}]

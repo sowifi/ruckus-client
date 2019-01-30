@@ -27,7 +27,7 @@ class ApConfig extends AbstractApi
      */
     public function listAll(array $uriParams = [])
     {
-        return $this->get('/aps' . http_build_query($uriParams));
+        return $this->get('/aps', $uriParams);
     }
 
     /**
