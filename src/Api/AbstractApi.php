@@ -22,11 +22,13 @@ abstract class AbstractApi
      * Generate GET request
      *
      * @param string $uri
+     * @param array $uriParams
+     *
      * @return array
      */
-    protected function get($uri)
+    protected function get($uri, array $uriParams = [])
     {
-        return $this->doRequest('get', $uri);
+        return $this->doRequest('get', $uri, [], $uriParams);
     }
 
     /**
@@ -71,15 +73,21 @@ abstract class AbstractApi
      * @param string $method
      * @param string $uri
      * @param array $body
+     * @param array $uriParams
      *
      * @return array
      */
-    protected function doRequest($method, $uri, $body = [])
+    protected function doRequest($method, $uri, $body = [], $uriParams = [])
     {
         $options = [];
         if (!empty($body)) {
             $options = [RequestOptions::JSON => $body];
         }
+
+        if (!empty($uriParams)) {
+            $uri = $uri . '?' . http_build_query($uriParams);
+        }
+
         $res = $this->client->getHttp()->$method($this->getUri() . $uri, $options);
 
         return $this->jsonDecode($res);

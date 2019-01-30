@@ -47,6 +47,17 @@ class ApConfigTest extends ApiTestCase
     }
 
     /**
+     * @vcr ap-config-list-param
+     */
+    public function testListWithParams()
+    {
+        $res = $this->apConfigApi->listAll(['zoneId' => '169d08ce-7434-4a38-8fac-0d43e4b625a8']);
+
+        $this->assertEquals(1, $res['totalCount']);
+        $this->assertEquals('00:A0:C9:14:C8:39', $res['list'][0]['mac']);
+    }
+
+    /**
      * @vcr ap-config-modify
      */
     public function testModify()
