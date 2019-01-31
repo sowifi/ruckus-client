@@ -1,0 +1,72 @@
+[{
+    "request": {
+        "method": "POST",
+        "url": "https:\/\/[]:8443\/wsg\/api\/public\/v7_0\/serviceTicket",
+        "headers": {
+            "Host": null,
+            "Expect": null,
+            "Accept-Encoding": null,
+            "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.10",
+            "Content-Type": "application\/json",
+            "Accept": null
+        },
+        "body": "{\"username\":\"admin\"}"
+    },
+    "response": {
+        "status": {
+            "http_version": "1.1",
+            "code": "200",
+            "message": ""
+        },
+        "headers": {
+            "Server": "nginx\/1.12.0",
+            "Date": "Thu, 31 Jan 2019 08:38:23 GMT",
+            "Content-Type": "text\/plain;charset=UTF-8",
+            "Transfer-Encoding": "chunked",
+            "Connection": "keep-alive",
+            "Set-Cookie": null,
+            "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+            "Pragma": "no-cache",
+            "Expires": "0",
+            "X-XSS-Protection": "1; mode=block",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Content-Type-Options": "nosniff",
+            "Vary": "Accept-Encoding"
+        },
+        "body": "{\"controllerVersion\":\"5.1.0.0.496\",\"serviceTicket\":\"ST-109-k2v2AmefbKW4vq5x5Rz9-sct-test-001\"}"
+    }
+},{
+    "request": {
+        "method": "GET",
+        "url": "https:\/\/[]:8443\/wsg\/api\/public\/v7_0\/aps\/F8:E7:1E:0E:EA:60?",
+        "headers": {
+            "Host": "[]:8443",
+            "Accept-Encoding": null,
+            "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.10",
+            "Accept": null
+        }
+    },
+    "response": {
+        "status": {
+            "http_version": "1.1",
+            "code": "200",
+            "message": ""
+        },
+        "headers": {
+            "Server": "nginx\/1.12.0",
+            "Date": "Thu, 31 Jan 2019 08:38:23 GMT",
+            "Content-Type": "text\/plain;charset=UTF-8",
+            "Transfer-Encoding": "chunked",
+            "Connection": "keep-alive",
+            "Set-Cookie": null,
+            "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+            "Pragma": "no-cache",
+            "Expires": "0",
+            "X-XSS-Protection": "1; mode=block",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Content-Type-Options": "nosniff, nosniff",
+            "Vary": "Accept-Encoding"
+        },
+        "body": "{\"mac\":\"F8:E7:1E:0E:EA:60\",\"zoneId\":\"b6f64749-a0b9-4af7-9fda-88d54f42d225\",\"awsVenue\":null,\"apGroupId\":\"07a8c732-43a0-4752-976a-7c4e664cd3e9\",\"serial\":\"911609000515\",\"model\":\"R310\",\"name\":\"RuckusAP\",\"description\":\"Ruckus test model\",\"gpsSource\":null,\"latitude\":null,\"longitude\":null,\"location\":null,\"locationAdditionalInfo\":null,\"provisionChecklist\":\"\",\"administrativeState\":\"Unlocked\",\"login\":null,\"syslog\":null,\"wifi24\":null,\"wifi50\":null,\"wlanService24Enabled\":true,\"wlanService50Enabled\":true,\"wlanGroup24\":null,\"wlanGroup50\":null,\"protectionMode24\":null,\"network\":{\"ipType\":\"Keep\",\"ip\":null,\"netmask\":null,\"gateway\":null,\"primaryDns\":null,\"secondaryDns\":null},\"networkIpv6\":{\"ipType\":\"Keep\",\"ip\":null,\"gateway\":null,\"primaryDns\":null,\"secondaryDns\":null},\"smartMonitor\":null,\"bonjourGateway\":null,\"clientAdmissionControl24\":null,\"clientAdmissionControl50\":null,\"venueProfile\":null,\"specific\":null,\"channelEvaluationInterval\":null,\"autoChannelSelection24\":{\"channelSelectMode\":null,\"channelFlyMtbc\":null},\"autoChannelSelection50\":{\"channelSelectMode\":null,\"channelFlyMtbc\":null},\"apMgmtVlan\":null,\"altitude\":{\"altitudeUnit\":null,\"altitudeValue\":null},\"meshOptions\":null,\"recoverySsid\":null,\"directedMulticastFromWiredClientEnabled\":null,\"directedMulticastFromWirelessClientEnabled\":null,\"directedMulticastFromNetworkEnabled\":null}"
+    }
+}]

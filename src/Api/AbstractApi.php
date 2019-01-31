@@ -77,7 +77,7 @@ abstract class AbstractApi
      *
      * @return array
      */
-    protected function doRequest($method, $uri, $body = [], $uriParams = [])
+    protected function doRequest($method, $uri, array $body = [], array $uriParams = [])
     {
         $options = [];
         if (!empty($body)) {
@@ -88,7 +88,7 @@ abstract class AbstractApi
             $uri = $uri . '?' . http_build_query($uriParams);
         }
 
-        $res = $this->client->getHttp()->$method($this->getUri() . $uri, $options);
+        $res = $this->client->getHttp()->$method($this->getBaseUri() . $uri, $options);
 
         return $this->jsonDecode($res);
     }
@@ -96,7 +96,7 @@ abstract class AbstractApi
     /**
      * @return string
      */
-    protected function getUri()
+    protected function getBaseUri()
     {
         return $this->client->getBaseUri();
     }

@@ -19,8 +19,20 @@ class ApConfig extends AbstractApi
     }
 
     /**
+     * Retrieve the configuration of an AP.
+     *
+     * @param string $apMac
+     * @return array
+     */
+    public function retrieve($apMac)
+    {
+        return $this->get('/aps/' . $apMac);
+    }
+
+
+    /**
      * Retrieve the list of APs that belong to a zone or a domain.
-     * Todo: Rename to `list` once moved to PHP 7
+     * Todo: Rename to `retrieveList` to match docs
      *
      * @param array $uriParams
      * @return array
