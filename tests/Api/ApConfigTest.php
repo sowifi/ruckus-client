@@ -36,6 +36,17 @@ class ApConfigTest extends ApiTestCase
     }
 
     /**
+     * @vcr ap-config-retrieve
+     */
+    public function testRetrieve()
+    {
+        $mac = 'F8:E7:1E:0E:EA:60';
+        $res = $this->apConfigApi->retrieve($mac);
+
+        $this->assertEquals($mac, $res['mac']);
+    }
+
+    /**
      * @vcr ap-config-list
      */
     public function testList()

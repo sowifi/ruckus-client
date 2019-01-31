@@ -46,6 +46,6 @@ class ServiceTicket extends AbstractApi
      */
     public function isServiceLogonRequest(RequestInterface $req)
     {
-        return (string) $req->getUri() === $this->getUri() . '/serviceTicket' && $req->getMethod() === 'POST';
+        return (string) $req->getUri() === $this->getBaseUri() . '/serviceTicket' && $req->getMethod() === 'POST';
     }
 }
