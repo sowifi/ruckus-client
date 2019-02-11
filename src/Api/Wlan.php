@@ -60,6 +60,19 @@ class Wlan extends AbstractApi
     }
 
     /**
+     * Retrieve a list of WLANs within a zone
+     *
+     * @param string $zoneId
+     * @param array $uriParams
+     *
+     * @return array
+     */
+    public function retrieveList($zoneId, array $uriParams = [])
+    {
+        return $this->get('/rkszones/' . $zoneId . '/wlans', $uriParams);
+    }
+
+    /**
      * Modify the basic information of a WLAN.
      *
      * @param string $zoneId

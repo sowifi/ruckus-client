@@ -1,0 +1,72 @@
+[{
+    "request": {
+        "method": "POST",
+        "url": "https:\/\/[]:8443\/wsg\/api\/public\/v7_0\/serviceTicket",
+        "headers": {
+            "Host": null,
+            "Expect": null,
+            "Accept-Encoding": null,
+            "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.15",
+            "Content-Type": "application\/json",
+            "Accept": null
+        },
+        "body": "{\"username\":\"admin\"}"
+    },
+    "response": {
+        "status": {
+            "http_version": "1.1",
+            "code": "200",
+            "message": ""
+        },
+        "headers": {
+            "Server": "nginx\/1.12.0",
+            "Date": "Mon, 11 Feb 2019 09:26:31 GMT",
+            "Content-Type": "text\/plain;charset=UTF-8",
+            "Transfer-Encoding": "chunked",
+            "Connection": "keep-alive",
+            "Set-Cookie": null,
+            "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+            "Pragma": "no-cache",
+            "Expires": "0",
+            "X-XSS-Protection": "1; mode=block",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Content-Type-Options": "nosniff",
+            "Vary": "Accept-Encoding"
+        },
+        "body": "{\"controllerVersion\":\"5.1.0.0.496\",\"serviceTicket\":\"ST-399-tGHOaB6LIJZ9OV635hwy-sct-test-001\"}"
+    }
+},{
+    "request": {
+        "method": "GET",
+        "url": "https:\/\/[]:8443\/wsg\/api\/public\/v7_0\/rkszones\/4757aaa9-aa3b-4acf-9731-8970049d9109\/wlans?",
+        "headers": {
+            "Host": "[]:8443",
+            "Accept-Encoding": null,
+            "User-Agent": "GuzzleHttp\/6.3.3 curl\/7.52.1 PHP\/7.2.15",
+            "Accept": null
+        }
+    },
+    "response": {
+        "status": {
+            "http_version": "1.1",
+            "code": "200",
+            "message": ""
+        },
+        "headers": {
+            "Server": "nginx\/1.12.0",
+            "Date": "Mon, 11 Feb 2019 09:26:32 GMT",
+            "Content-Type": "text\/plain;charset=UTF-8",
+            "Transfer-Encoding": "chunked",
+            "Connection": "keep-alive",
+            "Set-Cookie": null,
+            "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+            "Pragma": "no-cache",
+            "Expires": "0",
+            "X-XSS-Protection": "1; mode=block",
+            "X-Frame-Options": "SAMEORIGIN",
+            "X-Content-Type-Options": "nosniff",
+            "Vary": "Accept-Encoding"
+        },
+        "body": "{\"totalCount\":2,\"hasMore\":false,\"firstIndex\":0,\"list\":[{\"id\":\"2\",\"mvnoId\":\"839f87c6-d116-497e-afce-aa8157abd30c\",\"zoneId\":\"4757aaa9-aa3b-4acf-9731-8970049d9109\",\"name\":\"Ruckus Demo Private\",\"ssid\":\"Ruckus Demo Private\"},{\"id\":\"1\",\"mvnoId\":\"839f87c6-d116-497e-afce-aa8157abd30c\",\"zoneId\":\"4757aaa9-aa3b-4acf-9731-8970049d9109\",\"name\":\"Ruckus Demo Public\",\"ssid\":\"Ruckus Demo Public\"}]}"
+    }
+}]

@@ -37,10 +37,15 @@ $res = $client->wlan()->createWispr($zoneId, $body);
 Configuration
 -------
 Configuration is done using environment variables following 12-factor app methodology. Look at `getenv()` PHP function for details.
-`.env.example` file contains possible config variables. Create `.env` file to use in the test execution.
+`.env.example` file contains possible config variables.
 
 Development
 -------
+### Configure environment
+```bash
+cp .env.example .env
+```
+
 ### Running
 ```bash
 docker-compose up -d

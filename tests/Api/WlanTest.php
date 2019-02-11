@@ -103,6 +103,16 @@ class WlanTest extends ApiTestCase
     }
 
     /**
+     * @vcr wlan-retrieve-list
+     */
+    public function testRetrieveList()
+    {
+        $res = $this->wlanApi->retrieveList('4757aaa9-aa3b-4acf-9731-8970049d9109');
+
+        $this->assertSame(2, $res['totalCount']);
+    }
+
+    /**
      * @vcr wlan-modify
      */
     public function testModify()
