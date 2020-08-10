@@ -28,8 +28,4 @@ allejo\VCR\VCRCleaner::enable([
     ]
 ]);
 
-try {
-    Dotenv\Dotenv::create(__DIR__ . '/../')->load();
-} catch (\Dotenv\Exception\InvalidPathException $e) {
-    //
-}
+Dotenv\Dotenv::createUnsafeImmutable(__DIR__ . '/../')->safeLoad();
